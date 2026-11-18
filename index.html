@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ADAPT is a skills-first way to work through pain, injury, and the weak links that hold a skill back, using the training you already love. Work through it with Sam Goldner, DPT, CSCS.">
+<meta property="og:title" content="ADAPT Beyond Pain">
+<meta property="og:description" content="Keep doing what you love, unlimited by pain.">
+<meta property="og:image" content="https://adaptbeyondpain.com/img/mountain-start.jpg">
+<meta property="og:url" content="https://adaptbeyondpain.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://adaptbeyondpain.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#06669c">
+<title>ADAPT Beyond Pain</title>
+<style>
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/figtree-latin-700-normal.woff2) format('woff2')}
+
+:root{
+  --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
+  --blue:#03659D;
+  --blue-hover:#024A74;
+  --blue-ink:#FFFFFF;
+  --orange:#EB6D38;        --orange-display:#DA5B26;   --orange-text:#B04418;   --on-orange:#0F2A43;
+  --peach:#FFE6DC;
+  --focus:#B04418;
+  --display:'Jost','Futura','Century Gothic',Arial,sans-serif;
+  --body:'Figtree','Segoe UI',Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (min-width:900px){body{font-size:18px}}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0;font-weight:600}
+h2{font-size:clamp(1.85rem,1.5rem + 1.6vw,2.6rem);font-weight:800;letter-spacing:-0.005em}
+h3{font-size:1.3rem}
+p,ul,ol{margin:0}
+
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+section{padding-block:clamp(56px,8vw,96px)}
+.band{background:var(--band)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-text)}
+.lede{font-size:1.12em;color:var(--muted);max-width:62ch}
+.small{font-size:0.875rem;color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:8px;font-family:var(--display);font-weight:600;font-size:1.05rem;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--blue);color:var(--blue-ink)}
+.btn-ghost{border-color:currentColor;color:var(--blue)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (hover:hover){
+  .btn-primary:hover{background:var(--blue-hover)}
+  .btn-ghost:hover{background:var(--card)}
+  .top nav a:hover,.foot-top nav a:hover{text-decoration:underline}
+  .hero .btn-primary:hover{background:#024A74}
+  .hero .btn-ghost:hover{background:#FFFFFF}
+}
+
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:0.06em;text-decoration:none;color:var(--fg)}
+.brand img{width:38px;height:38px}
+
+.top{position:absolute;inset:0 0 auto;z-index:2;padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.top .brand{color:#10324A}
+.top nav{display:flex;gap:8px 20px;flex-wrap:wrap}
+.top nav a,.foot-top nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-weight:600}
+.top nav a{color:#10324A}
+
+.hero{position:relative;padding:0;min-height:clamp(560px,52vw,760px);display:flex;color:#10324A;overflow:hidden;background:#bcd9ea}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 55%)}
+.hero .wrap{position:relative;z-index:1;padding-top:calc(env(safe-area-inset-top,0px) + 112px);padding-bottom:48px}
+.hero-copy{max-width:580px;display:flex;flex-direction:column;gap:18px;background:rgba(255,255,255,.88);border-radius:16px;padding:28px}
+.hero a:focus-visible,.top a:focus-visible{outline:3px solid #B04418;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+.hero h1{font-size:clamp(2.9rem,1.9rem + 4.6vw,5.2rem);font-weight:800;letter-spacing:-0.02em;line-height:0.98}
+.hero .promise{font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,1.05rem + 0.8vw,1.6rem);line-height:1.25}
+.hero .eyebrow{color:#B04418}
+.hero .btn-primary{background:#03659D;color:#FFFFFF}
+.hero .btn-ghost{color:#10324A;background:rgba(255,255,255,.7)}
+
+.fit{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.fit li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.fit p{color:var(--muted)}
+
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:2px 14px;align-content:start}
+.step .num{grid-row:span 2;font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;color:var(--orange-display);font-variant-numeric:tabular-nums}
+.step .num.zero{color:var(--muted)}
+.step h3{font-size:1.25rem}
+.step h3 .letter{color:var(--orange-text)}
+.step p{color:var(--muted)}
+.step .move{display:block;font-family:var(--body);font-weight:600;font-size:0.95rem;color:var(--blue)}
+
+.offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.offer{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.offer .price{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.offer .price span{font-family:var(--body);font-weight:600;font-size:1rem;color:var(--muted)}
+.offer .tagline{font-weight:600}
+.offer ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.offer .note{background:var(--peach);border-radius:10px;padding:12px 14px;font-size:0.95rem}
+.coach{display:flex;flex-direction:column;gap:8px;padding-top:22px;border-top:3px solid var(--blue);max-width:62ch}
+.offer .founding{font-size:0.95rem;color:var(--muted);margin-top:-6px}
+.coach .creds{font-weight:600;color:var(--orange-text);font-size:0.95rem}
+.coach p{color:var(--muted)}
+
+.startbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.start-h{font-size:1.6rem;font-weight:800}
+.start h4{font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.2;margin:0}
+.addr-inline{font-weight:600;color:var(--fg);user-select:all;overflow-wrap:anywhere}
+.start{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.start li{counter-increment:s;display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid var(--line)}
+.start li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1;color:var(--orange-display)}
+.start p{color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.contact .addr{font-family:var(--display);font-weight:600;font-size:1.2rem;user-select:all;overflow-wrap:anywhere}
+
+.yt{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.yt .stack{max-width:60ch}
+
+footer{padding-block:40px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-direction:column;gap:14px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center}
+.foot-top nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.disclaimer{font-size:0.875rem;color:var(--muted);max-width:80ch}
+
+@media (max-width:1060px) and (min-width:861px){.start{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){
+  .fit,.steps,.start{grid-template-columns:1fr}
+  .startbox{padding:20px}
+  .offers{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .top nav{display:none}
+  .hero>img{object-position:28% 70%}
+  .hero-copy{padding:20px}
+  .hero .wrap{padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+  .offer{padding:20px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo/adapt-mark.svg" alt="" width="38" height="38">ADAPT</a>
+    <nav aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#coaching">Work with Sam</a>
+      <a href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="img/mountain-start.jpg" alt="A hiker in an orange jacket stands on a ridge above a lake, looking up at a tall mountain lit by the sunrise." width="1000" height="807">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">The ADAPT Method</span>
+        <h1>Adapt beyond pain</h1>
+        <p class="promise">Keep doing what you love, unlimited by pain.</p>
+        <p>ADAPT is a skills-first way to work through pain, injury, and the weak links that hold a skill back, using the training you already love.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#coaching">Work with Sam</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="for">
+    <div class="wrap stack" style="gap:28px">
+      <div class="stack narrow">
+        <span class="eyebrow">Who it's for</span>
+        <h2>For people who move, and want to keep moving</h2>
+      </div>
+      <ul class="fit">
+        <li><h3>A skill you love is being held back</h3><p>A handstand, a kick, a lift, a run, or an everyday task like standing for a while or carrying the groceries upstairs.</p></li>
+        <li><h3>Pain, an injury, or a weak link is the reason</h3><p>It hurts, or the range, strength, control, or confidence isn't there yet.</p></li>
+        <li><h3>You'd rather keep training</h3><p>ADAPT works through the training you already do, instead of asking you to stop everything and wait.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how" class="band">
+    <div class="wrap stack" style="gap:32px">
+      <div class="stack narrow">
+        <span class="eyebrow">How it works</span>
+        <h2>A quick screen, then five steps</h2>
+        <p class="lede">Each step gives you one Resilience Movement, built around your skill. Most people can set up all five in about an hour; after that it's a few minutes a day and a test once a week.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="num zero">0</span><h3>Pre-ADAPT Screening</h3><p>A checklist of warning signs and health questions, so anything that needs a professional's eyes gets them first.</p></li>
+        <li class="step"><span class="num">1</span><h3><span class="letter">A</span>ssess <span class="move">Painful Skill</span></h3><p>Name the skill that's held back, how much, and your 11/10 goal: the result that would prove you went past your old limits.</p></li>
+        <li class="step"><span class="num">2</span><h3><span class="letter">D</span>iscover <span class="move">Testing Movement</span></h3><p>Boil the skill down to the small piece that hurts and turn it into a simple test you do once a week, cold.</p></li>
+        <li class="step"><span class="num">3</span><h3><span class="letter">A</span>pproach <span class="move">Pain-Free Motion and Contraction Couplet</span></h3><p>Move through that position with zero pain, then hold it into and away from the pain. Daily, a few minutes.</p></li>
+        <li class="step"><span class="num">4</span><h3><span class="letter">P</span>rogram <span class="move">Overload Exercise</span></h3><p>Swap one exercise in your workout for a version that improves the same movement without flaring things up.</p></li>
+        <li class="step"><span class="num">5</span><h3><span class="letter">T</span>rack <span class="move">All five</span></h3><p>Check off the daily movements and log the weekly test. Two weeks shows the trend, so you know what to change next.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="sam">
+    <div class="wrap">
+      <div class="coach narrow">
+        <span class="eyebrow">Who you'll work with</span>
+        <h2>Sam Goldner</h2>
+        <span class="creds">DPT, CSCS, Pn1</span>
+        <p>Sam is a Doctor of Physical Therapy and strength coach professionally; personally, he trains acrobatics and MMA (just for fun, but he takes them both pretty seriously). He co-created ADAPT with Aaron Martin, an adult acrobatics coach extraordinaire and sports science fanatic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="coaching" class="band">
+    <div class="wrap stack" style="gap:32px">
+      <div class="stack narrow">
+        <span class="eyebrow">Work with Sam</span>
+        <h2>Run ADAPT with a physical therapist in your corner</h2>
+        <p class="lede">You can learn ADAPT on YouTube and run it yourself. If you'd like help finding your movements and adjusting them as you go, there are two ways to work with Sam.</p>
+      </div>
+      <div class="offers">
+        <article class="offer" aria-labelledby="o1">
+          <h3 id="o1">ADAPT Starter</h3>
+          <div class="price">$325 <span>one time</span></div>
+          <p class="tagline">Your plan, built together.</p>
+          <ul>
+            <li>A 45-minute video call to find all five of your movements</li>
+            <li>Your plan in the ADAPT app within 24 hours</li>
+            <li>A written review of your week-2 check-in</li>
+            <li>2 weeks of messages, answered within 2 business days</li>
+          </ul>
+          <p class="note"><b>Want more after that?</b> The full $325 counts toward ADAPT Guided if you move up within 2 weeks.</p>
+        </article>
+        <article class="offer" aria-labelledby="o2">
+          <h3 id="o2">ADAPT Guided</h3>
+          <div class="price">$1,200 <span>for 12 weeks</span></div>
+          <p class="founding"><b>Founding rate</b> for the first 5 ADAPT Guided clients. Regular price: $1,600.</p>
+          <p class="tagline">Your plan, and Sam with you for 12 weeks.</p>
+          <ul>
+            <li>Everything in ADAPT Starter</li>
+            <li>Written check-in reviews at weeks 2, 4, 8, and 12</li>
+            <li>Two 20-minute calls, at weeks 6 and 10</li>
+            <li>Messages answered within 2 business days, all 12 weeks</li>
+          </ul>
+          <p class="note"><b>Renewal:</b> another 12 weeks for $1,200. Founding clients renew at $950, as long as each renewal follows straight on from the last.</p>
+        </article>
+      </div>
+      <p class="small">Both are paid in full up front through PayPal. ADAPT is education and coaching, not medical care.</p>
+      <div id="start" class="startbox stack" style="gap:24px">
+        <h3 class="start-h">How to start</h3>
+        <ol class="start">
+          <li><h4>Take the Pre-ADAPT Screening</h4><p>About 5 minutes of warning signs and health questions, so you know whether anything should be checked first. Your answers carry over, so your first call can skip it.</p></li>
+          <li><h4>Accept the client agreement</h4><p>Pick Starter or Guided; read and accept the Client Agreement; must be 18 years or older.</p></li>
+          <li><h4>Pay</h4><p>Pay through PayPal, with a card or your PayPal account.</p></li>
+          <li><h4>Sam books your first call</h4><p>Once he sees your payment, he responds within 24 hours with a booking link for your first call.</p></li>
+        </ol>
+        <div class="btn-row"><a class="btn btn-primary" href="screening/">Start with the screening</a></div>
+        <p class="small">Questions first? Email <span class="addr-inline">sam@adaptbeyondpain.com</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap yt">
+      <div class="stack">
+        <span class="eyebrow">YouTube</span>
+        <h2>Learn ADAPT on YouTube</h2>
+        <p>The ADAPT Beyond Pain channel teaches the method one step at a time: what each step is, why it works, and real examples, starting with Sam's own hip.</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener">Go to @AdaptBeyondPain</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <span class="brand"><picture><source media="(prefers-color-scheme: dark)" srcset="logo/adapt-mark-on-dark.svg"><img src="logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT <span class="small" style="letter-spacing:0;font-family:var(--body);font-weight:400">Adapt beyond pain</span></span>
+      <nav aria-label="Footer">
+        <a href="#how">How it works</a>
+        <a href="#coaching">Work with Sam</a>
+        <a href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+    </div>
+    <p class="small">Contact: sam@adaptbeyondpain.com</p>
+    <p class="small">ADAPT is education and coaching, not medical care.</p>
+    <p class="disclaimer">All information gathered and recommendations given do not constitute medical advice. While we think it is spectacular and supremely helpful, anyone utilizing the pearls of wisdom contained within is doing so volitionally and is personally assuming all risk.</p>
+    <p class="small">&copy; 2026 ADAPT Beyond Pain</p>
+  </div>
+</footer>
+</body>
+</html>
