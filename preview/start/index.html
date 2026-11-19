@@ -297,7 +297,7 @@ function view(){
   ${S.errors.length?`<div class="msg warn" role="alert"><b>A few things to fix</b><ul style="padding-left:1.2em">${S.errors.map(e=>`<li>${esc(e)}</li>`).join("")}</ul></div>`:""}
   <div class="card"><h2>1. Your option</h2><div class="opts">${shown.map(optCard).join("")}</div>${shown.length===2?`<p class="fine">Not sure? ADAPT Starter's $325 counts in full toward ADAPT Guided if you move up within 2 weeks of your call.</p>`:""}</div>
   <div class="card"><h2>2. Your details</h2>
-    <label class="f">Full name<input type="text" data-in="name" autocomplete="name" value="${esc(S.name)}"></label>
+    <label class="f">Name you go by<input type="text" data-in="name" autocomplete="name" placeholder="First and last" value="${esc(S.name)}"></label>
     <label class="f">Email<span class="hint">For your booking link and a copy of this agreement.</span><input type="email" data-in="email" autocomplete="email" inputmode="email" spellcheck="false" value="${esc(S.email)}"></label>
     <label class="f">WhatsApp number<span class="hint">With your country code. Sam recommends WhatsApp because it is easier to trade messages, voice notes, pictures, and videos, to give you the best level of support. Leave it blank if you'd rather use email.</span><input type="tel" data-in="whatsapp" autocomplete="tel" inputmode="tel" value="${esc(S.whatsapp)}"></label>
   </div>
@@ -313,7 +313,7 @@ function view(){
     <div class="agree ${S.openText?"open":""}" tabindex="0" aria-label="ADAPT client agreement">${document.getElementById("agreement-text").innerHTML}</div>
     <div><button type="button" class="linkbtn" data-open="1">${S.openText?"Show less":"Show the whole agreement"}</button></div>
     <label class="check"><input type="checkbox" data-in="agree" ${S.agree?"checked":""}><span>I've read and agree to the ADAPT client agreement, including the disclaimer, and I'm 18 or older.</span></label>
-    <label class="f">Type your full name to sign<input type="text" data-in="sign" autocomplete="off" value="${esc(S.sign)}"></label>
+    <label class="f">Sign by typing your full legal name<input type="text" data-in="sign" placeholder="First and last" autocomplete="off" value="${esc(S.sign)}"></label>
     <div><button type="button" class="btn btn-primary" data-submit="1" ${S.sending?"disabled":""}>${S.sending?"Sending...":"Accept and continue"}</button></div>
   </div>`;
 }
@@ -326,13 +326,13 @@ function doneView(){
 }
 function validate(){ const e=[];
   if(!S.option) e.push("Choose your option.");
-  if(!S.name.trim()) e.push("Add your full name.");
+  if(!S.name.trim()) e.push("Add the name you go by.");
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(S.email.trim())) e.push("Add a valid email.");
   if(!S.side||!S.region) e.push("Choose the side and the body region.");
   if(!S.kind) e.push("Say whether your skill hurts or is limited.");
   if(!S.ctx) e.push("Say whether it's a sport or an everyday task.");
   if(!S.agree) e.push("Tick the box to accept the agreement.");
-  if(S.sign.trim().toLowerCase()!==S.name.trim().toLowerCase()||!S.sign.trim()) e.push("Type your full name to sign, the same as above.");
+  if(S.sign.trim().split(/\s+/).length<2) e.push("Sign by typing your full legal name, first and last.");
   return e; }
 function render(){ document.getElementById("app").innerHTML=view(); if(!PREVIEW){ const b=document.getElementById("pv-bar"); if(b) b.remove(); } }
 document.addEventListener("input", e=>{ const k=e.target.dataset.in; if(!k) return; S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; });
@@ -360,7 +360,7 @@ function send(){
       if(j && j.ok){ S.result=j; S.done=true;
         try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:S.option, id:j.id, date:new Date().toLocaleDateString("en-CA")})); }catch(e){}
         render(); window.scrollTo(0,0); return; }
-      const why={name:"Type your full name to sign, the same as above.", email:"Check your email address.", screening:"Your screening answers didn't come through. Retake the screening, then come back.", busy:"The form is busy right now. Try again in a few minutes."};
+      const why={name:"Sign by typing your full legal name, first and last.", email:"Check your email address.", screening:"Your screening answers didn't come through. Retake the screening, then come back.", busy:"The form is busy right now. Try again in a few minutes."};
       S.errors=[why[j&&j.error]||"Something went wrong saving your agreement. Try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"});
     }).catch(()=>{ S.sending=false; S.errors=["Your agreement didn't send. Check your connection and try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"}); });
 }
