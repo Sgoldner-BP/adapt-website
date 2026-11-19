@@ -278,7 +278,7 @@ const qs = new URLSearchParams(location.search);
 const shown = ["upgrade","renewal","test"].includes(qs.get("o")) ? [qs.get("o")] : ["starter","guided"];
 
 let screen=null; try{ screen=JSON.parse(localStorage.getItem("adapt-screening")||"null"); }catch(e){}
-const SAMPLE = f => ({date:new Date().toISOString().slice(0,10), rf:(f?"nnnnnnnynnnnnnnnnnnn":"nnnnnnnnnnnnnnnnnnnn"), hh:"nnnnnnn"});
+const SAMPLE = f => ({date:new Date().toLocaleDateString("en-CA"), rf:(f?"nnnnnnnynnnnnnnnnnnn":"nnnnnnnnnnnnnnnnnnnn"), hh:"nnnnnnn"});
 if(PREVIEW && !screen) screen = SAMPLE(false);
 const flagged = s => !!s && (/y/.test(s.rf)||/y/.test(s.hh));
 const S = {sending:false, result:null, option: shown.length===1?shown[0]:(qs.get("o")==="guided"?"guided":""), name:"", email:"", whatsapp:"", side:"", region:"", kind:"", ctx:"", agree:false, sign:"", openText:false, errors:[], done:false};
@@ -358,7 +358,7 @@ function send(){
     .then(r=>r.json()).then(j=>{
       S.sending=false;
       if(j && j.ok){ S.result=j; S.done=true;
-        try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:S.option, id:j.id, date:new Date().toISOString().slice(0,10)})); }catch(e){}
+        try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:S.option, id:j.id, date:new Date().toLocaleDateString("en-CA")})); }catch(e){}
         render(); window.scrollTo(0,0); return; }
       const why={name:"Type your full name to sign, the same as above.", email:"Check your email address.", screening:"Your screening answers didn't come through. Retake the screening, then come back.", busy:"The form is busy right now. Try again in a few minutes."};
       S.errors=[why[j&&j.error]||"Something went wrong saving your agreement. Try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"});

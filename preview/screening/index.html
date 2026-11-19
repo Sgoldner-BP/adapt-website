@@ -212,7 +212,7 @@ const enc = (o,n) => { let s=""; for(let i=1;i<=n;i++) s += o[i]==="yes"?"y":o[i
 
 function load(){ try{ const v = JSON.parse(localStorage.getItem(KEY)||"null"); if(v&&v.rf&&v.hh){ [...v.rf].forEach((c,i)=>{ if(c==="y") ans.rf[i+1]="yes"; else if(c==="n") ans.rf[i+1]="no"; }); [...v.hh].forEach((c,i)=>{ if(c==="y") ans.hh[i+1]="yes"; else if(c==="n") ans.hh[i+1]="no"; }); } }catch(e){} }
 function store(){ try{ const done = Object.keys(ans.rf).length===RED_FLAGS.length && Object.keys(ans.hh).length===HEALTH.length;
-  if(done) localStorage.setItem(KEY, JSON.stringify({date:new Date().toISOString().slice(0,10), rf:enc(ans.rf,RED_FLAGS.length), hh:enc(ans.hh,HEALTH.length)}));
+  if(done) localStorage.setItem(KEY, JSON.stringify({date:new Date().toLocaleDateString("en-CA"), rf:enc(ans.rf,RED_FLAGS.length), hh:enc(ans.hh,HEALTH.length)}));
   else localStorage.removeItem(KEY); }catch(e){} }
 
 function list(g){
