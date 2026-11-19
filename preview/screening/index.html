@@ -239,7 +239,8 @@ function result(){
     <a href="${ROOT}start/?o=test"><b>Work with Sam</b><span>ADAPT Starter or ADAPT Guided. Your answers come with you.</span></a></div>${startOver}`;
   const em = yesRF.some(i=>EMERGENCY_FLAGS.includes(i)) || yesHH.some(i=>EMERGENCY_HH.includes(i));
   return `${em?`<div class="msg alert" role="alert"><p>${esc(MSG_RIGHT_NOW)}</p></div>`:""}
-    <div class="msg warn"><b>Follow up</b><p>${esc(MSG_INPERSON_A)}<a href="${OFFERS_URL}">${esc(OFFERS_URL.replace("https://",""))}</a>${esc(MSG_INPERSON_B)}</p><p>${esc(MSG_SECOND_STEP)}</p></div>${startOver}`;
+    <div class="msg warn"><b>Follow up</b><p>${esc(MSG_INPERSON_A)}<a href="${OFFERS_URL}">${esc(OFFERS_URL.replace("https://",""))}</a>${esc(MSG_INPERSON_B)}</p><p>${esc(MSG_SECOND_STEP)}</p></div>
+    ${em?"":`<div class="next"><a href="${ROOT}start/?o=test"><b>Work with Sam</b><span>Accept the client agreement, and Sam will message you to talk it through before you pay. Your answers come with you.</span></a></div>`}${startOver}`;
 }
 function render(){
   document.getElementById("rf-note").innerHTML = noteBlock("rf"); document.getElementById("hh-note").innerHTML = noteBlock("hh");
