@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Start working with Sam: choose ADAPT Starter or ADAPT Guided and accept the client agreement.">
+<meta property="og:title" content="ADAPT Beyond Pain">
+<meta property="og:description" content="Keep doing what you love, unlimited by pain.">
+<meta property="og:image" content="https://adaptbeyondpain.com/img/mountain-start.jpg">
+<meta property="og:url" content="https://adaptbeyondpain.com/start/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://adaptbeyondpain.com/start/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta name="theme-color" content="#06669c">
+<title>ADAPT Agreement</title>
+<style>
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../../fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../../fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../../fonts/figtree-latin-700-normal.woff2) format('woff2')}
+
+:root{
+  --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
+  --blue:#03659D;
+  --blue-hover:#024A74;
+  --blue-ink:#FFFFFF;
+  --orange:#EB6D38;        --orange-display:#DA5B26;   --orange-text:#B04418;   --on-orange:#0F2A43;
+  --peach:#FFE6DC;
+  --focus:#B04418;
+  --display:'Jost','Futura','Century Gothic',Arial,sans-serif;
+  --body:'Figtree','Segoe UI',Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (min-width:900px){body{font-size:18px}}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0;font-weight:600}
+h2{font-size:clamp(1.85rem,1.5rem + 1.6vw,2.6rem);font-weight:800;letter-spacing:-0.005em}
+h3{font-size:1.3rem}
+p,ul,ol{margin:0}
+
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+section{padding-block:clamp(56px,8vw,96px)}
+.band{background:var(--band)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-text)}
+.lede{font-size:1.12em;color:var(--muted);max-width:62ch}
+.small{font-size:0.875rem;color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:8px;font-family:var(--display);font-weight:600;font-size:1.05rem;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--blue);color:var(--blue-ink)}
+.btn-ghost{border-color:currentColor;color:var(--blue)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (hover:hover){
+  .btn-primary:hover{background:var(--blue-hover)}
+  .btn-ghost:hover{background:var(--card)}
+  .top nav a:hover,.foot-top nav a:hover{text-decoration:underline}
+  .hero .btn-primary:hover{background:#024A74}
+  .hero .btn-ghost:hover{background:#FFFFFF}
+}
+
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:0.06em;text-decoration:none;color:var(--fg)}
+.brand img{width:38px;height:38px}
+
+footer{padding-block:40px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-direction:column;gap:14px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center}
+.foot-top nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.disclaimer{font-size:0.875rem;color:var(--muted);max-width:80ch}
+
+
+.page-top{background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.page-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.page-top nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none}
+main{padding-block:clamp(32px,6vw,64px)}
+.col{max-width:760px;margin-inline:auto;display:flex;flex-direction:column;gap:20px}
+h1{font-size:clamp(2.1rem,1.6rem + 2.4vw,3.2rem);font-weight:800;letter-spacing:-0.01em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,28px);display:flex;flex-direction:column;gap:14px}
+.card h2{font-size:1.6rem}
+.card p{color:var(--fg)}
+.yn{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:12px;border-top:1px solid var(--line)}
+.yn:first-of-type{border-top:0}
+.yn .q{flex:1 1 18em;min-width:0}
+.yn .num{font-family:var(--display);font-weight:600;color:var(--muted);margin-right:6px;font-variant-numeric:tabular-nums}
+.btns{display:inline-flex;gap:8px}
+.btns button{min-width:72px;min-height:44px;border-radius:8px;border:1.5px solid var(--muted);background:var(--card);color:var(--fg);font:600 1rem var(--body);cursor:pointer}
+.btns button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--blue-ink)}
+.btns button.yes[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--on-orange)}
+.btn-plain{background:var(--card);color:var(--blue);border:2px solid var(--blue)}
+.note{font-size:0.95rem;color:var(--muted)}
+.fine{font-size:0.875rem;color:var(--muted)}
+.msg{border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.msg b{font-family:var(--display);font-size:1.1rem}
+.msg.good{background:var(--band)}
+.msg.warn{background:var(--peach)}
+.msg.alert{background:var(--peach);border:2px solid var(--orange-text);font-weight:600}
+.next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.next a{display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+.next a b{font-family:var(--display);font-size:1.1rem;color:var(--blue)}
+.next a span{color:var(--muted);font-size:0.95rem}
+.none-apply{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+.none-apply.confirm{background:var(--band);border-radius:12px;padding:14px}
+@media (hover:hover){.next a:hover{border-color:var(--blue)}.btns button:hover{border-color:var(--blue)}}
+@media (max-width:640px){.next{grid-template-columns:1fr}}
+
+.opts{display:grid;gap:12px}
+.opt{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;background:var(--card)}
+.opt input{width:22px;height:22px;margin-top:4px;accent-color:var(--blue);flex:none}
+.opt b{font-family:var(--display);font-size:1.15rem}
+.opt .pr{font-family:var(--display);font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.opt .pr s{font-weight:600;color:var(--muted);font-size:1rem;margin-left:6px}
+.opt:has(input:checked){border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+label.f{display:grid;gap:6px;font-weight:600}
+label.f .hint,.hint{font-weight:400;color:var(--muted);font-size:0.95rem}
+input[type=text],input[type=email],input[type=tel],select{font:inherit;font-size:17px;color:var(--fg);background:var(--card);border:1.5px solid var(--muted);border-radius:8px;padding:10px 12px;width:100%;min-width:0;min-height:48px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--muted);background:var(--card);color:var(--fg);font:600 1rem var(--body);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--blue-ink)}
+.agree{max-height:440px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.agree.open{max-height:none}
+.agree h3{font-size:1.15rem;margin-top:8px}
+.agree ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.agree table{border-collapse:collapse;width:100%}
+.agree td,.agree th{border-top:1px solid var(--line);padding:6px 8px 6px 0;text-align:left;vertical-align:top}
+.chg{background:var(--peach);border-radius:4px;padding:0 3px}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+.check input{width:24px;height:24px;margin-top:2px;accent-color:var(--blue);flex:none}
+.err{color:var(--orange-text);font-weight:600}
+.pv-bar{background:var(--orange);color:var(--on-orange);text-align:center;font-weight:600;padding:8px 16px}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--blue);text-decoration:underline;cursor:pointer;min-height:44px}
+</style>
+</head>
+<body>
+<div style="background:#E8692A;color:#1a1a1a;text-align:center;font:600 14px/1.4 system-ui,sans-serif;padding:6px 16px">Test copy for Sam. Real script, real emails, real PayPal links.</div>
+<div class="pv-bar" id="pv-bar">Preview: nothing is sent or saved yet. The highlighted lines in the agreement follow your November 17-18 calls and differ from the current draft.<div class="seg" style="justify-content:center;margin-top:8px" role="group" aria-label="Preview as"><button type="button" data-pv="clear">Clear screening</button><button type="button" data-pv="flag">Flagged screening</button><button type="button" data-pv="none">No screening</button></div></div>
+<header class="page-top">
+  <div class="wrap">
+    <a class="brand" href="../../"><picture><source media="(prefers-color-scheme: dark)" srcset="../../logo/adapt-mark-on-dark.svg"><img src="../../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
+    <nav aria-label="Main"><a href="../../#coaching">Work with Sam</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="col" id="app"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small">Contact: sam@adaptbeyondpain.com</p>
+    <p class="small">ADAPT is education and coaching, not medical care.</p>
+    <p class="disclaimer">All information gathered and recommendations given do not constitute medical advice. While we think it is spectacular and supremely helpful, anyone utilizing the pearls of wisdom contained within is doing so volitionally and is personally assuming all risk.</p>
+    <p class="small">&copy; 2026 ADAPT Beyond Pain</p>
+  </div>
+</footer>
+
+<template id="agreement-text">
+<h3>ADAPT Client Agreement</h3>
+<p>This agreement is between Bulldog Performance, LLC, doing business as ADAPT Beyond Pain ("ADAPT," "we"), and the person accepting it below ("you"). It covers ADAPT Starter and ADAPT Guided.</p>
+<h3>1. What ADAPT is, and what it isn't</h3>
+<p>ADAPT is education and coaching. It helps you work through pain and movement limits using the skills and training you already do.</p>
+<ul>
+<li><b>It isn't physical therapy or medical care.</b> Sam Goldner is a physical therapist (DPT), but in ADAPT he works as a coach, not as your physical therapist. No physical therapist-patient relationship is created.</li>
+<li><b>There's no diagnosis.</b> ADAPT doesn't diagnose, name, or treat any condition. It works with what you feel and what you can do, described in movement terms.</li>
+<li><b>You make the choices.</b> We explain options and our reasoning; you decide what to do.</li>
+<li><b>Keep your own care.</b> ADAPT doesn't replace your doctor, physical therapist, or other healthcare providers. Keep seeing them as you and they see fit, and follow their advice where it differs from ours.</li>
+</ul>
+<h3>2. Pre-ADAPT Screening and getting care</h3>
+<p>Before we start, you answer the Pre-ADAPT Screening (warning signs and health questions) honestly and completely, and you tell Sam if anything on it changes while we work together.</p>
+<ul>
+<li><b>A "yes" starts a conversation.</b> It doesn't automatically end the coaching. <span class="chg">If you answer Yes to anything, Sam talks it through with you before you pay,</span> and together you decide whether to go ahead or get checked first.</li>
+<li><b>When we suggest getting checked,</b> we also help you find the training you can continue in the meantime, within whatever your provider advises.</li>
+<li><b>The screening has limits:</b> "This table cannot be used to definitively determine what you do/do not have or the severity of it. That can only be done under the direct care of a medical provider. Seek care if you feel you should. You are assuming your own risk with whatever actions you take."</li>
+<li><b>Some symptoms may need care right now:</b> changes in vision, hearing, speech, balance or dizziness, control of a limb, bowel or bladder control, or sexual function; loss of consciousness; unexplained nausea, vomiting, or diarrhea; or unusual shortness of breath. "If you are experiencing these symptoms right now, we officially advise that you IMMEDIATELY follow up in-person with a medical professional, as this may be an EMERGENCY."</li>
+<li><b>Messages to Sam aren't for emergencies.</b> He answers within 2 business days, so don't wait on a reply for anything urgent.</li>
+</ul>
+<h3>3. What's included</h3>
+<p><b>ADAPT Starter</b></p>
+<ul>
+<li><span class="chg">One 45-minute video call: the first steps of ADAPT together, exploring and selecting the best choices for your movements.</span></li>
+<li>Your plan set up in the ADAPT app, with the link sent within 24 hours of the call.</li>
+<li>Two weeks of messaging support with Sam, answered within 2 business days.</li>
+<li>One check-in review at the end of the 2 weeks, with a written reply.</li>
+</ul>
+<p><b>ADAPT Guided (12 weeks)</b></p>
+<ul>
+<li>Everything in ADAPT Starter.</li>
+<li>Written replies to your app check-ins at weeks 2, 4, 8, and 12.</li>
+<li>Messages answered within 2 business days for the whole 12 weeks.</li>
+<li>A 20-minute call around week 6 for whatever is getting in your way, and a 20-minute review call around week 10 to plan what comes next.</li>
+</ul>
+<p><b>ADAPT Guided renewal (12 more weeks)</b></p>
+<ul><li>The same as ADAPT Guided, without the setup call.</li></ul>
+<p><b>Always yours:</b> the ADAPT app and your plan in it, on your phone, during and after the coaching.</p>
+<h3>4. Price and payment</h3>
+<table>
+<tr><th>Offer</th><th>Price (USD)</th></tr>
+<tr><td>ADAPT Starter</td><td>$325</td></tr>
+<tr><td>ADAPT Guided, 12 weeks</td><td>$1,600 (founding rate $1,200 for the first 5 ADAPT Guided clients)</td></tr>
+<tr><td>ADAPT Guided renewal, 12 more weeks</td><td>$1,200 (founding clients: $950 for every renewal taken back to back, with no gap)</td></tr>
+</table>
+<ul>
+<li>Each is paid in full before it starts.</li>
+<li>If you move from ADAPT Starter to ADAPT Guided within 2 weeks of your call, the $325 counts toward it (you pay $1,275 more, or $875 at the founding rate). After those 2 weeks, moving to ADAPT Guided costs the renewal price, $1,200 ($950 while founding spots are open), since your setup is already done.</li>
+<li><span class="chg">You pay through PayPal, with a card or a PayPal account. Once you accept this agreement, you go to the payment page. Sam confirms your payment and sends you a link to book your first call within 24 hours.</span></li>
+</ul>
+<h3>5. Timing, calls, and messages</h3>
+<ul>
+<li><b>When the 12 weeks start:</b> the day you first open the plan link Sam sends you. The app counts the weeks and switches your plan to solo when they end; your plan and everything you've logged stay on your phone.</li>
+<li><b>Calls</b> are by video, booked at a time that works for both of us.</li>
+<li><b>Rescheduling:</b> give at least 24 hours' notice to move a call. The first call you miss without notice gets rebooked once; after that, a call missed without notice counts as having occurred and isn't rebooked or refunded.</li>
+<li><b>Pausing:</b> the 12 weeks run straight through and can't be paused. The purpose of ADAPT is to help you find what you can do regardless of your circumstances, adjusting as needed. Pausing is contrary to the whole method and underlying philosophy.</li>
+<li><b>Messages:</b> by WhatsApp (voice notes, videos, and photos welcome), answered within 2 business days. Your app check-ins come to Sam <span class="chg">through his client dashboard</span>.</li>
+</ul>
+<h3>6. Refunds and cancellations</h3>
+<p>You can get a full refund any time before your first call. Once your first call has occurred, payments aren't refunded.</p>
+<p>One exception: if the screening shows you should be checked before starting, and we agree not to go ahead, you get a full refund for anything not yet delivered.</p>
+<h3>7. Your part</h3>
+<ul>
+<li><b>Be honest and complete</b> in the screening, your logs, and your check-ins. The coaching is only as good as what Sam knows.</li>
+<li><b>Follow the pain rule.</b> Pain-Free Motion means no pain. For the Contraction Couplet and the Overload Exercise, pain can increase by up to 2 points above your resting pain, as long as it settles back to that level shortly after.</li>
+<li><b>Tell Sam</b> if pain stays higher than usual, if something new shows up, or if anything on the screening changes.</li>
+<li><b>You choose what you do.</b> You can skip, change, or stop any movement at any time, and you take responsibility for those choices. Sam is here to help guide you, not prescribe to you.</li>
+</ul>
+<h3>8. Results, confidentiality, and testimonials</h3>
+<ul>
+<li><b>No guaranteed results.</b> ADAPT is designed to help you keep doing what you love and build past old limits, but everyone responds differently, and we can't promise any particular outcome.</li>
+<li><b>Confidentiality:</b> "We will treat all your information as confidential and not reveal it unnecessarily."</li>
+<li><b>Your story stays yours.</b> We use your case in teaching or examples only with your separate written OK, and always with names and identifying details removed. A testimonial is used only with your separate written OK, credited the way you choose.</li>
+</ul>
+<h3>9. Disclaimer and agreement</h3>
+<p>All information gathered and recommendations given do not constitute medical advice. While we think it is spectacular and supremely helpful, anyone utilizing the pearls of wisdom contained within is doing so volitionally and is personally assuming all risk.</p>
+<p>By accepting this agreement through the ADAPT agreement form, you confirm that you are 18 or older, that you've read and understood this agreement, including the disclaimer above, and that you agree to it.</p>
+<p><span class="chg">The form records your full name, the date, the offer you chose, your answers, and a checked box saying you agree. Sam keeps that record, and you get a copy by email.</span></p>
+</template>
+
+<script>
+"use strict";
+/* Settings Sam can change: the founding rate shows while spots are open (later read from the client sheet). */
+const PREVIEW = false;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwW4eqgjC-xO8oE_cFK9gTZre96kB6aFVO2ZYZUAq0l4uuW3PGfEaGkNCP70vSxvgTSKw/exec";   // the "ADAPT client path" script, deployed November 18, 2026 (version 1)
+let FOUNDING_OPEN = true;   // live: read from the client sheet (founding spots left), below
+const ROOT = "../";
+const AGREEMENT_VERSION = "Draft of November 18, 2026 (2)";
+let OPTIONS = {};
+function setOptions(){ OPTIONS = {
+  starter:{name:"ADAPT Starter", price:325, line:"A 45-minute video call, your plan in the ADAPT app, 2 weeks of messaging support, and a week-2 check-in review."},
+  guided:{name:"ADAPT Guided", price:FOUNDING_OPEN?1200:1600, regular:FOUNDING_OPEN?1600:null, line:"12 weeks of coaching: the setup call, check-in reviews every two weeks, two 20-minute check-in calls, and messaging support all 12 weeks."},
+  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients within 2 weeks of their call: the $325 counts in full."},
+  renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")},
+  test:{name:"ADAPT test", price:1, line:"Sam's end-to-end test, $1. Removed after Friday's test."}
+}; }
+setOptions();
+const REGIONS=[["Hd","Head"],["J","Jaw"],["N","Neck"],["S","Shoulder"],["Ar","Upper arm"],["E","Elbow"],["Fa","Forearm"],["W","Wrist"],["Hn","Hand"],["Fi","Finger"],["Ch","Chest"],["Ab","Abdomen"],["Rb","Ribs or side of trunk"],["UB","Upper back"],["LB","Low back"],["Hp","Hip"],["Gr","Groin"],["Gt","Glute"],["Th","Thigh"],["K","Knee"],["Lg","Lower leg (shin or calf)"],["An","Ankle"],["Ft","Foot"],["T","Toe"]];
+const SIDES=[["R","Right"],["L","Left"],["B","Both"]];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => "$"+n.toLocaleString("en-US");
+const qs = new URLSearchParams(location.search);
+const shown = ["upgrade","renewal","test"].includes(qs.get("o")) ? [qs.get("o")] : ["starter","guided"];
+
+let screen=null; try{ screen=JSON.parse(localStorage.getItem("adapt-screening")||"null"); }catch(e){}
+const SAMPLE = f => ({date:new Date().toISOString().slice(0,10), rf:(f?"nnnnnnnynnnnnnnnnnnn":"nnnnnnnnnnnnnnnnnnnn"), hh:"nnnnnnn"});
+if(PREVIEW && !screen) screen = SAMPLE(false);
+const flagged = s => !!s && (/y/.test(s.rf)||/y/.test(s.hh));
+const S = {sending:false, result:null, option: shown.length===1?shown[0]:(qs.get("o")==="guided"?"guided":""), name:"", email:"", whatsapp:"", side:"", region:"", kind:"", ctx:"", agree:false, sign:"", openText:false, errors:[], done:false};
+
+function optCard(k){ const o=OPTIONS[k];
+  return `<label class="opt"><input type="radio" name="opt" value="${k}" ${S.option===k?"checked":""}><span class="stack" style="gap:4px"><b>${esc(o.name)}</b><span class="pr">${money(o.price)}${o.regular?`<s>${money(o.regular)}</s>`:""}</span>${o.regular?`<span class="hint">Founding rate for the first 5 ADAPT Guided clients. Regular price: ${money(o.regular)}.</span>`:""}<span class="hint">${esc(o.line)}</span></span></label>`; }
+const seg = (key, list, label) => `<div class="seg" role="group" aria-label="${esc(label)}">${list.map(([v,l])=>`<button type="button" data-k="${key}" data-v="${v}" aria-pressed="${S[key]===v}">${esc(l)}</button>`).join("")}</div>`;
+
+function view(){
+  if(!screen) return `<div class="stack" style="gap:10px"><span class="eyebrow">Work with Sam</span><h1>Start with the screening</h1></div>
+    <div class="card"><p>Before the agreement, take the Pre-ADAPT Screening. It takes about 5 minutes, and your answers come with you to this page.</p><div><a class="btn btn-primary" href="${ROOT}screening/">Take the screening</a></div></div>`;
+  if(S.done) return doneView();
+  const sd = new Date(screen.date+"T12:00:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+  const nFlags = (screen.rf.match(/y/g)||[]).length + (screen.hh.match(/y/g)||[]).length;
+  return `<div class="stack" style="gap:10px"><span class="eyebrow">Work with Sam</span><h1>Your ADAPT agreement</h1><p class="lede" style="color:var(--muted)">Pick your option, tell Sam a little about your skill, and accept the agreement. About 5 minutes.</p></div>
+  ${S.errors.length?`<div class="msg warn" role="alert"><b>A few things to fix</b><ul style="padding-left:1.2em">${S.errors.map(e=>`<li>${esc(e)}</li>`).join("")}</ul></div>`:""}
+  <div class="card"><h2>1. Your option</h2><div class="opts">${shown.map(optCard).join("")}</div>${shown.length===2?`<p class="fine">Not sure? ADAPT Starter's $325 counts in full toward ADAPT Guided if you move up within 2 weeks of your call.</p>`:""}</div>
+  <div class="card"><h2>2. Your details</h2>
+    <label class="f">Full name<input type="text" data-in="name" autocomplete="name" value="${esc(S.name)}"></label>
+    <label class="f">Email<span class="hint">For your booking link and a copy of this agreement.</span><input type="email" data-in="email" autocomplete="email" inputmode="email" spellcheck="false" value="${esc(S.email)}"></label>
+    <label class="f">WhatsApp number<span class="hint">With your country code. Sam recommends WhatsApp because it is easier to trade messages, voice notes, pictures, and videos, to give you the best level of support. Leave it blank if you'd rather use email.</span><input type="tel" data-in="whatsapp" autocomplete="tel" inputmode="tel" value="${esc(S.whatsapp)}"></label>
+  </div>
+  <div class="card"><h2>3. About your skill</h2>
+    <div class="stack" style="gap:8px"><b>Where is it?</b><span class="hint">If more than one area is involved, pick the one most important to focus on.</span>${seg("side",SIDES,"Side")}
+    <label class="f"><span class="hint">Body region</span><select data-in="region"><option value="">Choose a body region</option>${REGIONS.map(([k,l])=>`<option value="${k}" ${S.region===k?"selected":""}>${esc(l)}</option>`).join("")}</select></label></div>
+    <div class="stack" style="gap:8px"><b>Does your skill hurt, or is it limited without pain?</b>${seg("kind",[["painful","It hurts"],["restricted","It's limited, but doesn't hurt"]],"Hurts or limited")}</div>
+    <div class="stack" style="gap:8px"><b>Is it part of a sport or training, or an everyday task?</b>${seg("ctx",[["sport","Sport or training"],["daily","Everyday task"]],"Sport or everyday")}
+    <p class="fine">Everyday tasks count. Standing for 15 minutes, sitting through a movie, or carrying groceries up the stairs can be your skill just like a handstand or a takedown can.</p></div>
+  </div>
+  <div class="card"><h2>4. Your screening</h2><p>${nFlags?`From ${esc(sd)}: ${nFlags} question${nFlags===1?"":"s"} answered Yes. Sam will talk with you before you pay.`:`From ${esc(sd)}: no red flags or health flags.`}</p><p class="fine">Your answers come with this form. <a href="${ROOT}screening/">Retake the screening</a> if anything has changed.</p></div>
+  <div class="card"><h2>5. The agreement</h2><p class="fine">${esc(AGREEMENT_VERSION)}</p>
+    <div class="agree ${S.openText?"open":""}" tabindex="0" aria-label="ADAPT client agreement">${document.getElementById("agreement-text").innerHTML}</div>
+    <div><button type="button" class="linkbtn" data-open="1">${S.openText?"Show less":"Show the whole agreement"}</button></div>
+    <label class="check"><input type="checkbox" data-in="agree" ${S.agree?"checked":""}><span>I've read and agree to the ADAPT client agreement, including the disclaimer, and I'm 18 or older.</span></label>
+    <label class="f">Type your full name to sign<input type="text" data-in="sign" autocomplete="off" value="${esc(S.sign)}"></label>
+    <div><button type="button" class="btn btn-primary" data-submit="1" ${S.sending?"disabled":""}>${S.sending?"Sending...":"Accept and continue"}</button></div>
+  </div>`;
+}
+function doneView(){
+  const o=OPTIONS[S.option], price=(S.result&&S.result.price)||o.price;
+  if((S.result&&S.result.flagged) || flagged(screen)) return `<div class="stack" style="gap:10px"><span class="eyebrow">Agreement accepted</span><h1>Thanks, ${esc(S.name.split(" ")[0])}</h1></div>
+    <div class="card"><p>Because one or more of your screening answers was Yes, Sam will message you before you pay, to talk it through. He replies within 2 business days.</p><p class="fine">A copy of your agreement is on its way to ${esc(S.email)}.</p></div>`;
+  return `<div class="stack" style="gap:10px"><span class="eyebrow">Agreement accepted</span><h1>Thanks, ${esc(S.name.split(" ")[0])}</h1></div>
+    <div class="card"><p>Next: pay for ${esc(o.name)} (${money(price)}). Sam confirms your payment and sends you a link to book your first call within 24 hours.</p><div><a class="btn btn-primary" href="${ROOT}pay/?o=${S.option}&p=${price}">Go to payment</a></div><p class="fine">A copy of your agreement is on its way to ${esc(S.email)}.</p></div>`;
+}
+function validate(){ const e=[];
+  if(!S.option) e.push("Choose your option.");
+  if(!S.name.trim()) e.push("Add your full name.");
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(S.email.trim())) e.push("Add a valid email.");
+  if(!S.side||!S.region) e.push("Choose the side and the body region.");
+  if(!S.kind) e.push("Say whether your skill hurts or is limited.");
+  if(!S.ctx) e.push("Say whether it's a sport or an everyday task.");
+  if(!S.agree) e.push("Tick the box to accept the agreement.");
+  if(S.sign.trim().toLowerCase()!==S.name.trim().toLowerCase()||!S.sign.trim()) e.push("Type your full name to sign, the same as above.");
+  return e; }
+function render(){ document.getElementById("app").innerHTML=view(); if(!PREVIEW){ const b=document.getElementById("pv-bar"); if(b) b.remove(); } }
+document.addEventListener("input", e=>{ const k=e.target.dataset.in; if(!k) return; S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; });
+document.addEventListener("change", e=>{ if(e.target.name==="opt"){ S.option=e.target.value; render(); } else { const k=e.target.dataset.in; if(k) S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; } });
+document.addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.pv){ screen = b.dataset.pv==="none"?null:SAMPLE(b.dataset.pv==="flag"); S.done=false; render(); return; }
+  if(b.dataset.k){ S[b.dataset.k]=b.dataset.v; render(); return; }
+  if(b.dataset.open){ S.openText=!S.openText; render(); return; }
+  if(b.dataset.submit){ S.errors=validate(); if(S.errors.length){ render(); window.scrollTo({top:0,behavior:"smooth"}); return; }
+    if(PREVIEW || !SCRIPT_URL){ S.done=true; render(); window.scrollTo(0,0); return; }
+    send(); }
+});
+const label = (list,v) => (list.find(x=>x[0]===v)||["",""])[1];
+function send(){
+  S.sending=true; render();
+  const tpl=document.createElement("div"); tpl.innerHTML=document.getElementById("agreement-text").innerHTML;
+  tpl.querySelectorAll("h3").forEach(h=>h.insertAdjacentText("beforebegin","\n\n")); tpl.querySelectorAll("p,li,tr").forEach(n=>n.insertAdjacentText("beforebegin","\n\n"));
+  const text=tpl.textContent.replace(/[ \t]+/g," ").replace(/\n\s*\n\s*/g,"\n\n").trim();
+  const body={kind:"agreement", option:S.option, name:S.name.trim(), sign:S.sign.trim(), email:S.email.trim(), whatsapp:S.whatsapp.trim(),
+    side:label(SIDES,S.side), region:label(REGIONS,S.region), kind2:S.kind, ctx:S.ctx, screenDate:screen.date, rf:screen.rf, hh:screen.hh,
+    agree:S.agree===true, version:AGREEMENT_VERSION, text:text};
+  fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)})
+    .then(r=>r.json()).then(j=>{
+      S.sending=false;
+      if(j && j.ok){ S.result=j; S.done=true;
+        try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:S.option, id:j.id, date:new Date().toISOString().slice(0,10)})); }catch(e){}
+        render(); window.scrollTo(0,0); return; }
+      const why={name:"Type your full name to sign, the same as above.", email:"Check your email address.", screening:"Your screening answers didn't come through. Retake the screening, then come back.", busy:"The form is busy right now. Try again in a few minutes."};
+      S.errors=[why[j&&j.error]||"Something went wrong saving your agreement. Try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"});
+    }).catch(()=>{ S.sending=false; S.errors=["Your agreement didn't send. Check your connection and try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"}); });
+}
+render();
+if(SCRIPT_URL && !PREVIEW){ fetch(SCRIPT_URL+"?q=status").then(r=>r.json()).then(j=>{ if(j && j.ok && !j.foundingOpen){ FOUNDING_OPEN=false; setOptions(); if(!S.done) render(); } }).catch(()=>{}); }
+</script>
+</body>
+</html>

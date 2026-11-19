@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Pre-ADAPT Screening: check whether ADAPT is a good fit for you right now.">
+<meta property="og:title" content="ADAPT Beyond Pain">
+<meta property="og:description" content="Keep doing what you love, unlimited by pain.">
+<meta property="og:image" content="https://adaptbeyondpain.com/img/mountain-start.jpg">
+<meta property="og:url" content="https://adaptbeyondpain.com/screening/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://adaptbeyondpain.com/screening/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta name="theme-color" content="#06669c">
+<title>Pre-ADAPT Screening</title>
+<style>
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../../fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../../fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../../fonts/figtree-latin-700-normal.woff2) format('woff2')}
+
+:root{
+  --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
+  --blue:#03659D;
+  --blue-hover:#024A74;
+  --blue-ink:#FFFFFF;
+  --orange:#EB6D38;        --orange-display:#DA5B26;   --orange-text:#B04418;   --on-orange:#0F2A43;
+  --peach:#FFE6DC;
+  --focus:#B04418;
+  --good:#1D7555;--good-soft:#E2F3E8;--alert:#B42318;--alert-soft:#FCEBEA;
+  --display:'Jost','Futura','Century Gothic',Arial,sans-serif;
+  --body:'Figtree','Segoe UI',Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;--good:#6FD3A3;--good-soft:#173328;--alert:#FF8C84;--alert-soft:#3D1C1C;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1A22;--card:#142530;--band:#182E3B;--line:#2C4A5B;
+  --fg:#E6F2F8;--muted:#A8C1D0;--blue:#7CC4EE;--blue-hover:#A6D8F5;--blue-ink:#0B1A22;
+  --orange:#EB6D38;--orange-display:#F28D5F;--orange-text:#F6A47E;--on-orange:#0F2A43;--peach:#3A251B;--focus:#EB6D38;--good:#6FD3A3;--good-soft:#173328;--alert:#FF8C84;--alert-soft:#3D1C1C;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (min-width:900px){body{font-size:18px}}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0;font-weight:600}
+h2{font-size:clamp(1.85rem,1.5rem + 1.6vw,2.6rem);font-weight:800;letter-spacing:-0.005em}
+h3{font-size:1.3rem}
+p,ul,ol{margin:0}
+
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+section{padding-block:clamp(56px,8vw,96px)}
+.band{background:var(--band)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-text)}
+.lede{font-size:1.12em;color:var(--muted);max-width:62ch}
+.small{font-size:0.875rem;color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:8px;font-family:var(--display);font-weight:600;font-size:1.05rem;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--blue);color:var(--blue-ink)}
+.btn-ghost{border-color:currentColor;color:var(--blue)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (hover:hover){
+  .btn-primary:hover{background:var(--blue-hover)}
+  .btn-ghost:hover{background:var(--card)}
+  .top nav a:hover,.foot-top nav a:hover{text-decoration:underline}
+  .hero .btn-primary:hover{background:#024A74}
+  .hero .btn-ghost:hover{background:#FFFFFF}
+}
+
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:0.06em;text-decoration:none;color:var(--fg)}
+.brand img{width:38px;height:38px}
+
+footer{padding-block:40px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-direction:column;gap:14px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center}
+.foot-top nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.disclaimer{font-size:0.875rem;color:var(--muted);max-width:80ch}
+
+
+.page-top{background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.page-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.page-top nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none}
+main{padding-block:clamp(32px,6vw,64px)}
+.col{max-width:760px;margin-inline:auto;display:flex;flex-direction:column;gap:20px}
+h1{font-size:clamp(2.1rem,1.6rem + 2.4vw,3.2rem);font-weight:800;letter-spacing:-0.01em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,28px);display:flex;flex-direction:column;gap:14px}
+.card h2{font-size:1.6rem}
+.card p{color:var(--fg)}
+.yn{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:12px;border-top:1px solid var(--line)}
+.yn:first-of-type{border-top:0}
+.yn .q{flex:1 1 18em;min-width:0}
+.yn .num{font-family:var(--display);font-weight:600;color:var(--muted);margin-right:6px;font-variant-numeric:tabular-nums}
+.btns{display:inline-flex;gap:8px}
+.btns button{min-width:72px;min-height:44px;border-radius:8px;border:1.5px solid var(--muted);background:var(--card);color:var(--fg);font:600 1rem var(--body);cursor:pointer}
+.btns button[aria-pressed="true"][data-v="yes"]{background:var(--alert-soft);border-color:var(--alert);color:var(--alert)}
+.btns button[aria-pressed="true"][data-v="no"]{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.btn-plain{background:var(--card);color:var(--blue);border:2px solid var(--blue)}
+.note{font-size:0.95rem;color:var(--muted)}
+.fine{font-size:0.875rem;color:var(--muted)}
+.msg{border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.msg b{font-family:var(--display);font-size:1.1rem}
+.msg.good{background:var(--band)}
+.msg.warn{background:var(--peach)}
+.msg.alert{background:var(--peach);border:2px solid var(--orange-text);font-weight:600}
+.next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.next a{display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+.next a b{font-family:var(--display);font-size:1.1rem;color:var(--blue)}
+.next a span{color:var(--muted);font-size:0.95rem}
+.none-apply{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+.none-apply.confirm{background:var(--band);border-radius:12px;padding:14px}
+@media (hover:hover){.next a:hover{border-color:var(--blue)}.btns button:hover{border-color:var(--blue)}}
+@media (max-width:640px){.next{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div style="background:#E8692A;color:#1a1a1a;text-align:center;font:600 14px/1.4 system-ui,sans-serif;padding:6px 16px">Test copy for Sam. Real script, real emails, real PayPal links.</div>
+<header class="page-top">
+  <div class="wrap">
+    <a class="brand" href="../../"><picture><source media="(prefers-color-scheme: dark)" srcset="../../logo/adapt-mark-on-dark.svg"><img src="../../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
+    <nav aria-label="Main"><a href="../../#coaching">Work with Sam</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="col" id="app">
+      <div class="stack" style="gap:10px">
+        <span class="eyebrow">Before you start</span>
+        <h1>Pre-ADAPT Screening</h1>
+      </div>
+      <div class="card">
+        <p>Before starting the ADAPT journey, we need to rule out more serious underlying conditions. If you select ‘yes’ for any of the red flags below, the pain and movement related symptoms you are experiencing may be secondary to something more nefarious. Or, they may be due to a more significant structural issue that requires invasive intervention.</p>
+        <p>In these cases, we advise you to seek out a professional healthcare provider in-person, if you haven’t already, or you can get personalized guidance from our ADAPT team: <a href="https://adaptbeyondpain.com/#coaching">adaptbeyondpain.com/#coaching</a>. Regardless, the ADAPT method, or at least the lessons and perspectives it is built upon, can still be powerful tools to help you on your journey, no matter what you are dealing with.</p>
+        <p class="fine">Your answers stay in this browser. Nothing is sent from this page.</p>
+      </div>
+      <div class="card"><h2>Red flags</h2><div id="rf-note"></div><div id="rf"></div><div id="rf-none"></div>
+        <p class="fine"><b>*MEDICAL DISCLAIMER:</b> This table cannot be used to definitively determine what you do/do not have or the severity of it. That can only be done under the direct care of a medical provider. Seek care if you feel you should. You are assuming your own risk with whatever actions you take.</p>
+      </div>
+      <div class="card"><h2>Health status and history</h2><div id="hh-note"></div><div id="hh"></div><div id="hh-none"></div></div>
+      <div id="result" class="stack" aria-live="polite"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small">Contact: sam@adaptbeyondpain.com</p>
+    <p class="small">ADAPT is education and coaching, not medical care.</p>
+    <p class="disclaimer">All information gathered and recommendations given do not constitute medical advice. While we think it is spectacular and supremely helpful, anyone utilizing the pearls of wisdom contained within is doing so volitionally and is personally assuming all risk.</p>
+    <p class="small">&copy; 2026 ADAPT Beyond Pain</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* Wording copied from the ADAPT app (01, section 6). Keep the two in step. */
+const RED_FLAGS = [
+"Significant pain at rest",
+"Pain that spikes during activities to overwhelming levels and then stays flared at rest",
+"Significant decrease to range of motion, strength, and/or stability in affected area and surrounding/related areas",
+"Significant bruising unrelated to hard contact",
+"Significant/persistent/recurrent swelling",
+"A gap/dent/divot in affected tissue",
+"Numbness and/or tingling",
+"Changes in vision, hearing, speech, balance/dizziness, control of limb(s), bowel/bladder control, sexual function",
+"Inability to bear weight on affected limb",
+"Unexplained nausea, vomiting, and/or diarrhea",
+"Unexplained changes in appetite",
+"Unexplained significant weight loss",
+"Unexplained recurrent night sweats",
+"Fever",
+"Unexplained fatigue",
+"Atypical shortness of breath",
+"Pain that migrates to seemingly unrelated locations",
+"Worsening of current symptoms/onset of new symptoms despite appropriate self-care",
+"Recent surgical procedure in any body region",
+"Prior surgical procedure in painful body region"];
+const HEALTH = [
+"Has your doctor ever said that you have a heart condition OR high blood pressure?",
+"Do you feel pain in your chest at rest, during your daily activities of living, OR when you do physical activity?",
+"Do you lose balance because of dizziness OR have you lost consciousness in the last 12 months?",
+"Have you ever been diagnosed with another chronic medical condition (other than heart disease or high blood pressure)?",
+"Are you currently taking prescribed medications for a chronic medical condition?",
+"Are you currently taking any over-the-counter medications regularly for pain or any medical conditions?",
+"Has your doctor ever said that you should only do medically supervised physical activity?"];
+const EMERGENCY_FLAGS = [8,10,16], EMERGENCY_HH = [3];
+const MSG_RIGHT_NOW = "If you are experiencing these symptoms right now, we officially advise that you IMMEDIATELY follow up in-person with a medical professional, as this may be an EMERGENCY.";
+const MSG_INPERSON_A = "Based on your selection, we officially advise that you follow up with a medical professional for additional support and screening. That could be in-person, or you can get personalized guidance from our ADAPT team: ";
+const MSG_INPERSON_B = ". There is plenty you can learn from reading through the remainder of the ADAPT protocol, though, and you can use your judgement as to what questions you can still answer.";
+const MSG_SECOND_STEP = "In the meantime, use your judgement as to what training you can still continue that does not provoke your symptoms.";
+const ROOT = "../";
+const OFFERS_URL = "https://adaptbeyondpain.com/#coaching";
+const KEY = "adapt-screening";
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ans = {rf:{}, hh:{}};
+let confirmG = null;
+const LISTS = {rf:RED_FLAGS, hh:HEALTH};
+const urgent = (g,i) => (g==="rf"&&EMERGENCY_FLAGS.includes(i)) || (g==="hh"&&EMERGENCY_HH.includes(i));
+const enc = (o,n) => { let s=""; for(let i=1;i<=n;i++) s += o[i]==="yes"?"y":o[i]==="no"?"n":"-"; return s; };
+
+function load(){ try{ const v = JSON.parse(localStorage.getItem(KEY)||"null"); if(v&&v.rf&&v.hh){ [...v.rf].forEach((c,i)=>{ if(c==="y") ans.rf[i+1]="yes"; else if(c==="n") ans.rf[i+1]="no"; }); [...v.hh].forEach((c,i)=>{ if(c==="y") ans.hh[i+1]="yes"; else if(c==="n") ans.hh[i+1]="no"; }); } }catch(e){} }
+function store(){ try{ const done = Object.keys(ans.rf).length===RED_FLAGS.length && Object.keys(ans.hh).length===HEALTH.length;
+  if(done) localStorage.setItem(KEY, JSON.stringify({date:new Date().toISOString().slice(0,10), rf:enc(ans.rf,RED_FLAGS.length), hh:enc(ans.hh,HEALTH.length)}));
+  else localStorage.removeItem(KEY); }catch(e){} }
+
+function list(g){
+  return LISTS[g].map((q,ix)=>{ const i=ix+1, cur=ans[g][i];
+    return `<div class="yn"><span class="q"><span class="num">${i}.</span>${esc(q)}</span><span class="btns" role="group" aria-label="${esc(q)}"><button type="button" class="yes" data-g="${g}" data-i="${i}" data-v="yes" aria-pressed="${cur==="yes"}">Yes</button><button type="button" data-g="${g}" data-i="${i}" data-v="no" aria-pressed="${cur==="no"}">No</button></span></div>${cur==="yes"&&urgent(g,i)?`<div class="msg alert" role="alert"><p>${esc(MSG_RIGHT_NOW)}</p></div>`:""}`;
+  }).join("");
+}
+function noteBlock(g){ const L=LISTS[g]; if(!L.some((q,ix)=>!ans[g][ix+1])) return "";
+  return `<p class="note">Read each one and tap Yes for any that apply. If none do, there's a <b>None of these apply to me</b> button at the end of the list. If some do, tap Yes for those, then use <b>Mark the rest No</b>.</p>`; }
+function noneBlock(g){
+  const L = LISTS[g], blanks = L.filter((q,ix)=>!ans[g][ix+1]).length; if(!blanks) return "";
+  const anyYes = L.some((q,ix)=>ans[g][ix+1]==="yes");
+  if(confirmG===g) return `<div class="none-apply confirm" role="alert"><p><b>${anyYes?`Mark the ${blanks} unanswered question${blanks===1?"":"s"} No?`:`Confirm that none of these ${L.length} apply to you?`}</b></p><div class="btn-row"><button type="button" class="btn btn-primary" data-none="${g}" data-v="confirm">Confirm</button><button type="button" class="btn btn-plain" data-none="${g}" data-v="cancel">Cancel</button></div></div>`;
+  return `<div class="none-apply"><div><button type="button" class="btn btn-plain" data-none="${g}">${anyYes?"Mark the rest No":"None of these apply to me"}</button></div><p class="fine">${anyYes?`Sets the ${blanks} unanswered question${blanks===1?"":"s"} to No. Your Yes answers stay.`:"Sets every question above to No. You can still change any of them."}</p></div>`;
+}
+function result(){
+  const n = Object.keys(ans.rf).length + Object.keys(ans.hh).length, total = RED_FLAGS.length + HEALTH.length;
+  if(n<total) return `<p class="fine">Answer every question to see your result. ${n} of ${total} answered.</p>`;
+  const yesRF = Object.keys(ans.rf).filter(k=>ans.rf[k]==="yes").map(Number), yesHH = Object.keys(ans.hh).filter(k=>ans.hh[k]==="yes").map(Number);
+  const startOver = `<div><button type="button" class="btn btn-plain" data-reset="1">Start over</button></div>`;
+  if(!yesRF.length && !yesHH.length) return `<div class="msg good"><b>No red flags or health flags selected.</b><p>You’re clear to start.</p></div>
+    <h2 style="font-size:1.6rem">Where to go from here</h2>
+    <div class="next"><a href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener"><b>Learn ADAPT step by step</b><span>The ADAPT videos on YouTube.</span></a>
+    <a href="${ROOT}start/?o=test"><b>Work with Sam</b><span>ADAPT Starter or ADAPT Guided. Your answers come with you.</span></a></div>${startOver}`;
+  const em = yesRF.some(i=>EMERGENCY_FLAGS.includes(i)) || yesHH.some(i=>EMERGENCY_HH.includes(i));
+  return `${em?`<div class="msg alert" role="alert"><p>${esc(MSG_RIGHT_NOW)}</p></div>`:""}
+    <div class="msg warn"><b>Follow up</b><p>${esc(MSG_INPERSON_A)}<a href="${OFFERS_URL}">${esc(OFFERS_URL.replace("https://",""))}</a>${esc(MSG_INPERSON_B)}</p><p>${esc(MSG_SECOND_STEP)}</p></div>${startOver}`;
+}
+function render(){
+  document.getElementById("rf-note").innerHTML = noteBlock("rf"); document.getElementById("hh-note").innerHTML = noteBlock("hh");
+  document.getElementById("rf").innerHTML = list("rf"); document.getElementById("rf-none").innerHTML = noneBlock("rf");
+  document.getElementById("hh").innerHTML = list("hh"); document.getElementById("hh-none").innerHTML = noneBlock("hh");
+  document.getElementById("result").innerHTML = result();
+}
+document.addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.g){ const g=b.dataset.g, i=+b.dataset.i; ans[g][i]=b.dataset.v; if(confirmG===g) confirmG=null; store(); render(); return; }
+  if(b.dataset.none){ const g=b.dataset.none;
+    if(b.dataset.v==="confirm"){ LISTS[g].forEach((q,ix)=>{ if(!ans[g][ix+1]) ans[g][ix+1]="no"; }); confirmG=null; store(); }
+    else if(b.dataset.v==="cancel") confirmG=null; else confirmG=g;
+    render(); return; }
+  if(b.dataset.reset){ ans.rf={}; ans.hh={}; confirmG=null; store(); render(); window.scrollTo(0,0); }
+});
+load(); render();
+</script>
+</body>
+</html>
