@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Start working with Sam: choose ADAPT Starter or ADAPT Guided and accept the client agreement.">
 <meta property="og:title" content="ADAPT Beyond Pain">
@@ -11,17 +10,17 @@
 <meta property="og:url" content="https://adaptbeyondpain.com/start/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://adaptbeyondpain.com/start/">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../../favicon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#06669c">
 <title>ADAPT Agreement</title>
 <style>
-@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/jost-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../../fonts/jost-latin-800-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../../fonts/figtree-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/figtree-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../../fonts/figtree-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/figtree-latin-700-normal.woff2) format('woff2')}
 
 :root{
   --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
@@ -149,12 +148,10 @@ input[type=text],input[type=email],input[type=tel],select{font:inherit;font-size
 </style>
 </head>
 <body>
-<div style="background:#E8692A;color:#1a1a1a;text-align:center;font:600 14px/1.4 system-ui,sans-serif;padding:6px 16px">Test copy for Sam. Real script, real emails, real PayPal links.</div>
-<div class="pv-bar" id="pv-bar">Preview: nothing is sent or saved yet. The highlighted lines in the agreement follow your November 17-18 calls and differ from the current draft.<div class="seg" style="justify-content:center;margin-top:8px" role="group" aria-label="Preview as"><button type="button" data-pv="clear">Clear screening</button><button type="button" data-pv="flag">Flagged screening</button><button type="button" data-pv="none">No screening</button></div></div>
 <header class="page-top">
   <div class="wrap">
-    <a class="brand" href="../../"><picture><source media="(prefers-color-scheme: dark)" srcset="../../logo/adapt-mark-on-dark.svg"><img src="../../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
-    <nav aria-label="Main"><a href="../../#coaching">Work with Sam</a></nav>
+    <a class="brand" href="../"><picture><source media="(prefers-color-scheme: dark)" srcset="../logo/adapt-mark-on-dark.svg"><img src="../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
+    <nav aria-label="Main"><a href="../#coaching">Work with Sam</a></nav>
   </div>
 </header>
 
@@ -266,8 +263,7 @@ function setOptions(){ OPTIONS = {
   starter:{name:"ADAPT Starter", price:325, line:"A 45-minute video call, your plan in the ADAPT app, 2 weeks of messaging support, and a week-2 check-in review."},
   guided:{name:"ADAPT Guided", price:FOUNDING_OPEN?1200:1600, regular:FOUNDING_OPEN?1600:null, line:"12 weeks of coaching: the setup call, check-in reviews every two weeks, two 20-minute check-in calls, and messaging support all 12 weeks."},
   upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients within 2 weeks of their call: the $325 counts in full."},
-  renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")},
-  test:{name:"ADAPT test", price:1, line:"Sam's end-to-end test, $1. Removed after Friday's test."}
+  renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")}
 }; }
 setOptions();
 const REGIONS=[["Hd","Head"],["J","Jaw"],["N","Neck"],["S","Shoulder"],["Ar","Upper arm"],["E","Elbow"],["Fa","Forearm"],["W","Wrist"],["Hn","Hand"],["Fi","Finger"],["Ch","Chest"],["Ab","Abdomen"],["Rb","Ribs or side of trunk"],["UB","Upper back"],["LB","Low back"],["Hp","Hip"],["Gr","Groin"],["Gt","Glute"],["Th","Thigh"],["K","Knee"],["Lg","Lower leg (shin or calf)"],["An","Ankle"],["Ft","Foot"],["T","Toe"]];
@@ -275,7 +271,7 @@ const SIDES=[["R","Right"],["L","Left"],["B","Both"]];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money = n => "$"+n.toLocaleString("en-US");
 const qs = new URLSearchParams(location.search);
-const shown = ["upgrade","renewal","test"].includes(qs.get("o")) ? [qs.get("o")] : ["starter","guided"];
+const shown = ["upgrade","renewal"].includes(qs.get("o")) ? [qs.get("o")] : ["starter","guided"];
 
 let screen=null; try{ screen=JSON.parse(localStorage.getItem("adapt-screening")||"null"); }catch(e){}
 const SAMPLE = f => ({date:new Date().toLocaleDateString("en-CA"), rf:(f?"nnnnnnnynnnnnnnnnnnn":"nnnnnnnnnnnnnnnnnnnn"), hh:"nnnnnnn"});

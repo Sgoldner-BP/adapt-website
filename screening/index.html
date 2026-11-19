@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Pre-ADAPT Screening: check whether ADAPT is a good fit for you right now.">
 <meta property="og:title" content="ADAPT Beyond Pain">
@@ -11,17 +10,17 @@
 <meta property="og:url" content="https://adaptbeyondpain.com/screening/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://adaptbeyondpain.com/screening/">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../../favicon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#06669c">
 <title>Pre-ADAPT Screening</title>
 <style>
-@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/jost-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../../fonts/jost-latin-800-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../../fonts/figtree-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/figtree-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../../fonts/figtree-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/figtree-latin-700-normal.woff2) format('woff2')}
 
 :root{
   --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
@@ -124,11 +123,10 @@ h1{font-size:clamp(2.1rem,1.6rem + 2.4vw,3.2rem);font-weight:800;letter-spacing:
 </style>
 </head>
 <body>
-<div style="background:#E8692A;color:#1a1a1a;text-align:center;font:600 14px/1.4 system-ui,sans-serif;padding:6px 16px">Test copy for Sam. Real script, real emails, real PayPal links.</div>
 <header class="page-top">
   <div class="wrap">
-    <a class="brand" href="../../"><picture><source media="(prefers-color-scheme: dark)" srcset="../../logo/adapt-mark-on-dark.svg"><img src="../../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
-    <nav aria-label="Main"><a href="../../#coaching">Work with Sam</a></nav>
+    <a class="brand" href="../"><picture><source media="(prefers-color-scheme: dark)" srcset="../logo/adapt-mark-on-dark.svg"><img src="../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
+    <nav aria-label="Main"><a href="../#coaching">Work with Sam</a></nav>
   </div>
 </header>
 
@@ -236,11 +234,11 @@ function result(){
   if(!yesRF.length && !yesHH.length) return `<div class="msg good"><b>No red flags or health flags selected.</b><p>You’re clear to start.</p></div>
     <h2 style="font-size:1.6rem">Where to go from here</h2>
     <div class="next"><a href="https://www.youtube.com/@AdaptBeyondPain" target="_blank" rel="noopener"><b>Learn ADAPT step by step</b><span>The ADAPT videos on YouTube.</span></a>
-    <a href="${ROOT}start/?o=test"><b>Work with Sam</b><span>ADAPT Starter or ADAPT Guided. Your answers come with you.</span></a></div>${startOver}`;
+    <a href="${ROOT}start/"><b>Work with Sam</b><span>ADAPT Starter or ADAPT Guided. Your answers come with you.</span></a></div>${startOver}`;
   const em = yesRF.some(i=>EMERGENCY_FLAGS.includes(i)) || yesHH.some(i=>EMERGENCY_HH.includes(i));
   return `${em?`<div class="msg alert" role="alert"><p>${esc(MSG_RIGHT_NOW)}</p></div>`:""}
     <div class="msg warn"><b>Follow up</b><p>${esc(MSG_INPERSON_A)}<a href="${OFFERS_URL}">${esc(OFFERS_URL.replace("https://",""))}</a>${esc(MSG_INPERSON_B)}</p><p>${esc(MSG_SECOND_STEP)}</p></div>
-    <div class="next"><a href="${ROOT}start/?o=test"><b>Work with Sam</b><span>Accept the client agreement, and Sam will message you to talk it through before you pay. Your answers come with you.</span></a></div>${startOver}`;
+    <div class="next"><a href="${ROOT}start/"><b>Work with Sam</b><span>Accept the client agreement, and Sam will message you to talk it through before you pay. Your answers come with you.</span></a></div>${startOver}`;
 }
 function render(){
   document.getElementById("rf-note").innerHTML = noteBlock("rf"); document.getElementById("hh-note").innerHTML = noteBlock("hh");

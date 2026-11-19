@@ -10,17 +10,17 @@
 <meta property="og:url" content="https://adaptbeyondpain.com/pay/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://adaptbeyondpain.com/pay/">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../../favicon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="theme-color" content="#06669c">
 <title>ADAPT Payment</title>
 <style>
-@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/jost-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../../fonts/jost-latin-800-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../../fonts/figtree-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../../fonts/figtree-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../../fonts/figtree-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/jost-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/figtree-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/figtree-latin-700-normal.woff2) format('woff2')}
 
 :root{
   --bg:#EDFAFF;            --card:#FFFFFF;          --band:#DAF0FE;          --line:#AAD2E6;          --fg:#10324A;            --muted:#4D6B80;
@@ -151,14 +151,12 @@ input[type=text],input[type=email],input[type=tel],select{font:inherit;font-size
 </style>
 </head>
 <body>
-<div style="background:#E8692A;color:#1a1a1a;text-align:center;font:600 14px/1.4 system-ui,sans-serif;padding:6px 16px">Test copy for Sam. Real script, real emails, real PayPal links.</div>
 <meta name="robots" content="noindex">
 
-<div class="pv-bar" id="pv-bar">Preview: the PayPal buttons are the real links, so don't pay from here.<div class="seg" style="justify-content:center;margin-top:8px" role="group" aria-label="Preview as"><button type="button" data-pv="starter">ADAPT Starter</button><button type="button" data-pv="guided">ADAPT Guided</button><button type="button" data-pv="noagree">No agreement yet</button><button type="button" data-pv="renewal">Renewal</button><button type="button" data-pv="closed">Founding rate full</button></div></div>
 <header class="page-top">
   <div class="wrap">
-    <a class="brand" href="../../"><picture><source media="(prefers-color-scheme: dark)" srcset="../../logo/adapt-mark-on-dark.svg"><img src="../../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
-    <nav aria-label="Main"><a href="../../#coaching">Work with Sam</a></nav>
+    <a class="brand" href="../"><picture><source media="(prefers-color-scheme: dark)" srcset="../logo/adapt-mark-on-dark.svg"><img src="../logo/adapt-mark.svg" alt="" width="38" height="38"></picture>ADAPT</a>
+    <nav aria-label="Main"><a href="../#coaching">Work with Sam</a></nav>
   </div>
 </header>
 
@@ -190,8 +188,7 @@ const OPTIONS = {
   starter:{name:"ADAPT Starter", founding:325, regular:325, link:{founding:"https://www.paypal.com/ncp/payment/YT7JZYU63C6BN", regular:"https://www.paypal.com/ncp/payment/YT7JZYU63C6BN"}, booking:true},
   guided:{name:"ADAPT Guided", founding:1200, regular:1600, link:{founding:"https://www.paypal.com/ncp/payment/77Y5VAVZPBGLW", regular:"https://www.paypal.com/ncp/payment/LUMYQ5Y7458CA"}, booking:true},
   upgrade:{name:"ADAPT Starter to Guided upgrade", founding:875, regular:1275, link:{founding:"https://www.paypal.com/ncp/payment/49FH5SKT235RL", regular:"https://www.paypal.com/ncp/payment/XGFYGUYMEZUUG"}, booking:false},
-  renewal:{name:"ADAPT Guided renewal", founding:950, regular:1200, link:{founding:"https://www.paypal.com/ncp/payment/N6HPZWZQ5KPGY", regular:"https://www.paypal.com/ncp/payment/4QG7VXFN96PCJ"}, booking:false},
-  test:{name:"ADAPT test", founding:1, regular:1, link:{founding:"https://www.paypal.com/ncp/payment/WCWJQW653E3QE", regular:"https://www.paypal.com/ncp/payment/WCWJQW653E3QE"}, booking:true}   // Friday's test only; removed after
+  renewal:{name:"ADAPT Guided renewal", founding:950, regular:1200, link:{founding:"https://www.paypal.com/ncp/payment/N6HPZWZQ5KPGY", regular:"https://www.paypal.com/ncp/payment/4QG7VXFN96PCJ"}, booking:false}
 };
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money = n => "$"+n.toLocaleString("en-US");
