@@ -194,6 +194,8 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">"
 const money = n => "$"+n.toLocaleString("en-US");
 const qs = new URLSearchParams(location.search);
 let opt = OPTIONS[qs.get("o")] ? qs.get("o") : "";
+const fromStarter = qs.get("from")==="starter";   // moving up from ADAPT Starter after the 2-week window (renewal price; November 19, 2026)
+const oName = () => fromStarter && opt==="renewal" ? "ADAPT Guided (moving up from ADAPT Starter)" : OPTIONS[opt].name;
 const pGiven = Number(qs.get("p")) || 0;
 const priceFixed = () => opt && pGiven && (pGiven === OPTIONS[opt].founding || pGiven === OPTIONS[opt].regular);
 let founding = (SCRIPT_URL && !PREVIEW) ? null : true, agreed = null;   // null until the script says whether founding spots are left
@@ -205,22 +207,22 @@ if(PREVIEW){ opt = opt || "guided"; agreed = {option:opt}; }
 function view(){
   if(!opt) return `<div class="stack" style="gap:10px"><span class="eyebrow">Payment</span><h1>Start with the agreement</h1></div>
     <div class="card"><p>The payment page opens from the client agreement, so Sam knows what you chose.</p><div><a class="btn btn-primary" href="${ROOT}start/">Go to the agreement</a></div></div>`;
-  if(founding===null) return `<div class="stack" style="gap:10px"><span class="eyebrow">Payment</span><h1>Pay for ${esc(OPTIONS[opt].name)}</h1></div><div class="card"><p>Checking the current price...</p></div>`;
+  if(founding===null) return `<div class="stack" style="gap:10px"><span class="eyebrow">Payment</span><h1>Pay for ${esc(oName())}</h1></div><div class="card"><p>Checking the current price...</p></div>`;
   const o = OPTIONS[opt], rate = founding ? "founding" : "regular", price = o[rate], link = o.link[rate];
   const hasAgreement = agreed && agreed.option === opt;
   const after = o.booking ? "Sam confirms your payment and sends you a link to book your first call within 24 hours."
                           : "Sam confirms your payment and updates your plan in the ADAPT app within 24 hours.";
   const payCard = link ? `<div class="card">
       <span class="price">${money(price)}${opt==="guided"&&founding?`<s>${money(o.regular)}</s>`:""}</span>
-      ${opt==="guided"&&founding?`<p class="hint">Founding rate for the first 5 ADAPT Guided clients.</p>`:""}${opt==="renewal"&&founding?`<p class="hint">Founding renewal rate, for founding clients renewing back to back.</p>`:""}
+      ${opt==="guided"&&founding?`<p class="hint">Founding rate for the first 5 ADAPT Guided clients.</p>`:""}${opt==="renewal"&&fromStarter?`<p class="hint">ADAPT Guided at the renewal price, since your setup is already done${founding?" (founding rate while founding spots are open)":""}.</p>`:opt==="renewal"&&founding?`<p class="hint">Founding renewal rate, for founding clients renewing back to back.</p>`:""}
       <p>Pay through PayPal, with a card or your PayPal account.</p>
       <div><a class="btn btn-primary" href="${esc(link)}" rel="noopener">Pay ${money(price)} with PayPal</a></div>
       <p class="fine">If someone else pays for you, ask them to put your name in PayPal's note, "Name on your ADAPT agreement, if different," so Sam can match the payment to you.</p>
     </div>
     <div class="card"><h2>After you pay</h2><ol class="steps"><li>PayPal emails you a receipt.</li><li>${after}</li></ol>
       <p class="fine">Nothing after a day? Email sam@adaptbeyondpain.com.</p></div>`
-    : `<div class="card"><span class="price">${money(price)}</span><p>Sam will email you a PayPal link for ${esc(o.name)} within 24 hours. Nothing to do here.</p><p class="fine">Questions: sam@adaptbeyondpain.com</p></div>`;
-  return `<div class="stack" style="gap:10px"><span class="eyebrow">Payment</span><h1>Pay for ${esc(o.name)}</h1></div>
+    : `<div class="card"><span class="price">${money(price)}</span><p>Sam will email you a PayPal link for ${esc(oName())} within 24 hours. Nothing to do here.</p><p class="fine">Questions: sam@adaptbeyondpain.com</p></div>`;
+  return `<div class="stack" style="gap:10px"><span class="eyebrow">Payment</span><h1>Pay for ${esc(oName())}</h1></div>
     ${hasAgreement ? "" : `<div class="msg warn"><b>Accept the agreement first</b><p>Sam matches each payment to a signed agreement. If you haven't accepted it yet, start there.</p><div><a class="btn btn-plain" href="${ROOT}start/?o=${opt}">Go to the agreement</a></div><p class="fine">Already accepted it on another device? Go ahead and pay below.</p></div>`}
     ${payCard}`;
 }

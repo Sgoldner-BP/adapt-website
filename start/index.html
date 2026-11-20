@@ -217,7 +217,7 @@ input[type=text],input[type=email],input[type=tel],select{font:inherit;font-size
 </table>
 <ul>
 <li>Each is paid in full before it starts.</li>
-<li>If you move from ADAPT Starter to ADAPT Guided within 2 weeks of your call, the $325 counts toward it (you pay $1,275 more, or $875 at the founding rate). After those 2 weeks, moving to ADAPT Guided costs the renewal price, $1,200 ($950 while founding spots are open), since your setup is already done.</li>
+<li>If you move from ADAPT Starter to ADAPT Guided within 2 weeks of your call, the $325 counts toward it (you pay $1,275 more, or $875 at the founding rate). After those 2 weeks, moving to ADAPT Guided costs $950 while founding spots are open, since your setup is already done, and $1,275 after that.</li>
 <li><span class="chg">You pay through PayPal, with a card or a PayPal account. Once you accept this agreement, you go to the payment page. Sam confirms your payment and sends you a link to book your first call within 24 hours.</span></li>
 </ul>
 <h3>5. Timing, calls, and messages</h3>
@@ -257,17 +257,18 @@ const PREVIEW = false;
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwW4eqgjC-xO8oE_cFK9gTZre96kB6aFVO2ZYZUAq0l4uuW3PGfEaGkNCP70vSxvgTSKw/exec";   // the "ADAPT client path" script, deployed November 18, 2026 (version 1)
 let FOUNDING_OPEN = true;   // live: read from the client sheet (founding spots left), below
 const ROOT = "../";
-const AGREEMENT_VERSION = "Draft of November 18, 2026 (2)";
+const AGREEMENT_VERSION = "Draft of November 19, 2026";
 let OPTIONS = {};
 function setOptions(){ OPTIONS = {
   starter:{name:"ADAPT Starter", price:325, line:"A 45-minute video call, your plan in the ADAPT app, 2 weeks of messaging support, and a week-2 check-in review."},
   guided:{name:"ADAPT Guided", price:FOUNDING_OPEN?1200:1600, regular:FOUNDING_OPEN?1600:null, line:"12 weeks of coaching: the setup call, check-in reviews every two weeks, two 20-minute check-in calls, and messaging support all 12 weeks."},
-  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients within 2 weeks of their call: the $325 counts in full."},
+  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients. Within 2 weeks of your call, the $325 counts in full ("+(FOUNDING_OPEN?"$875":"$1,275")+" more). "+(FOUNDING_OPEN?"After that, it's $950 while founding spots are open, since your setup is already done. Your price shows after you accept.":"The price is the same after that."), priceText:FOUNDING_OPEN?"$875 or $950":null},
   renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")}
 }; }
 setOptions();
 const REGIONS=[["Hd","Head"],["J","Jaw"],["N","Neck"],["S","Shoulder"],["Ar","Upper arm"],["E","Elbow"],["Fa","Forearm"],["W","Wrist"],["Hn","Hand"],["Fi","Finger"],["Ch","Chest"],["Ab","Abdomen"],["Rb","Ribs or side of trunk"],["UB","Upper back"],["LB","Low back"],["Hp","Hip"],["Gr","Groin"],["Gt","Glute"],["Th","Thigh"],["K","Knee"],["Lg","Lower leg (shin or calf)"],["An","Ankle"],["Ft","Foot"],["T","Toe"]];
 const SIDES=[["R","Right"],["L","Left"],["B","Both"]];
+const HEARD=["YouTube @ADAPTBeyondPain","YouTube @SoftAcroAaron","Instagram @SoftAcroAaron","Movement Freedom System","Acro Body Community","A friend or training partner","Search","Other"];   // Sam, November 19, 2026
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money = n => "$"+n.toLocaleString("en-US");
 const qs = new URLSearchParams(location.search);
@@ -277,10 +278,10 @@ let screen=null; try{ screen=JSON.parse(localStorage.getItem("adapt-screening")|
 const SAMPLE = f => ({date:new Date().toLocaleDateString("en-CA"), rf:(f?"nnnnnnnynnnnnnnnnnnn":"nnnnnnnnnnnnnnnnnnnn"), hh:"nnnnnnn"});
 if(PREVIEW && !screen) screen = SAMPLE(false);
 const flagged = s => !!s && (/y/.test(s.rf)||/y/.test(s.hh));
-const S = {sending:false, result:null, option: shown.length===1?shown[0]:(qs.get("o")==="guided"?"guided":""), name:"", email:"", whatsapp:"", side:"", region:"", kind:"", ctx:"", agree:false, sign:"", openText:false, errors:[], done:false};
+const S = {sending:false, result:null, option: shown.length===1?shown[0]:(qs.get("o")==="guided"?"guided":""), name:"", email:"", whatsapp:"", side:"", region:"", kind:"", ctx:"", agree:false, sign:"", heard:"", heardOther:"", openText:false, errors:[], done:false};
 
 function optCard(k){ const o=OPTIONS[k];
-  return `<label class="opt"><input type="radio" name="opt" value="${k}" ${S.option===k?"checked":""}><span class="stack" style="gap:4px"><b>${esc(o.name)}</b><span class="pr">${money(o.price)}${o.regular?`<s>${money(o.regular)}</s>`:""}</span>${o.regular?`<span class="hint">Founding rate for the first 5 ADAPT Guided clients. Regular price: ${money(o.regular)}.</span>`:""}<span class="hint">${esc(o.line)}</span></span></label>`; }
+  return `<label class="opt"><input type="radio" name="opt" value="${k}" ${S.option===k?"checked":""}><span class="stack" style="gap:4px"><b>${esc(o.name)}</b><span class="pr">${o.priceText||money(o.price)}${o.regular?`<s>${money(o.regular)}</s>`:""}</span>${o.regular?`<span class="hint">Founding rate for the first 5 ADAPT Guided clients. Regular price: ${money(o.regular)}.</span>`:""}<span class="hint">${esc(o.line)}</span></span></label>`; }
 const seg = (key, list, label) => `<div class="seg" role="group" aria-label="${esc(label)}">${list.map(([v,l])=>`<button type="button" data-k="${key}" data-v="${v}" aria-pressed="${S[key]===v}">${esc(l)}</button>`).join("")}</div>`;
 
 function view(){
@@ -296,6 +297,8 @@ function view(){
     <label class="f">Name you go by<input type="text" data-in="name" autocomplete="name" placeholder="First and last" value="${esc(S.name)}"></label>
     <label class="f">Email<span class="hint">For your booking link and a copy of this agreement.</span><input type="email" data-in="email" autocomplete="email" inputmode="email" spellcheck="false" value="${esc(S.email)}"></label>
     <label class="f">WhatsApp number<span class="hint">With your country code. Sam recommends WhatsApp because it is easier to trade messages, voice notes, pictures, and videos, to give you the best level of support. Leave it blank if you'd rather use email.</span><input type="tel" data-in="whatsapp" autocomplete="tel" inputmode="tel" value="${esc(S.whatsapp)}"></label>
+    <label class="f">How did you hear about ADAPT? <span class="hint">Optional</span><select data-in="heard" data-rerender="1"><option value="">Choose one</option>${HEARD.map(h=>`<option value="${esc(h)}" ${S.heard===h?"selected":""}>${esc(h)}</option>`).join("")}</select></label>
+    ${S.heard==="Other"?`<label class="f">Where did you hear about it?<input type="text" data-in="heardOther" maxlength="100" value="${esc(S.heardOther)}"></label>`:""}
   </div>
   <div class="card"><h2>3. About your skill</h2>
     <div class="stack" style="gap:8px"><b>Where is it?</b><span class="hint">If more than one area is involved, pick the one most important to focus on.</span>${seg("side",SIDES,"Side")}
@@ -314,11 +317,12 @@ function view(){
   </div>`;
 }
 function doneView(){
-  const o=OPTIONS[S.option], price=(S.result&&S.result.price)||o.price;
+  const late=!!(S.result&&S.result.late), opt=(S.result&&S.result.option)||S.option, o=OPTIONS[opt], price=(S.result&&S.result.price)||o.price;
+  const oname = late ? "ADAPT Guided (moving up from ADAPT Starter)" : o.name;
   if((S.result&&S.result.flagged) || flagged(screen)) return `<div class="stack" style="gap:10px"><span class="eyebrow">Agreement accepted</span><h1>Thanks, ${esc(S.name.split(" ")[0])}</h1></div>
     <div class="card"><p>Because one or more of your screening answers was Yes, Sam will message you before you pay, to talk it through. He replies within 2 business days.</p><p class="fine">A copy of your agreement is on its way to ${esc(S.email)}.</p></div>`;
   return `<div class="stack" style="gap:10px"><span class="eyebrow">Agreement accepted</span><h1>Thanks, ${esc(S.name.split(" ")[0])}</h1></div>
-    <div class="card"><p>Next: pay for ${esc(o.name)} (${money(price)}). Sam confirms your payment and sends you a link to book your first call within 24 hours.</p><div><a class="btn btn-primary" href="${ROOT}pay/?o=${S.option}&p=${price}">Go to payment</a></div><p class="fine">A copy of your agreement is on its way to ${esc(S.email)}.</p></div>`;
+    <div class="card"><p>Next: pay for ${esc(oname)} (${money(price)}).${late?" Since you're past the 2 weeks after your ADAPT Starter call, it's the renewal price.":""} ${o.booking?"Sam confirms your payment and sends you a link to book your first call within 24 hours.":"Sam confirms your payment and updates your plan in the ADAPT app within 24 hours."}</p><div><a class="btn btn-primary" href="${ROOT}pay/?o=${opt}&p=${price}${late?"&from=starter":""}">Go to payment</a></div><p class="fine">A copy of your agreement is on its way to ${esc(S.email)}.</p></div>`;
 }
 function validate(){ const e=[];
   if(!S.option) e.push("Choose your option.");
@@ -332,7 +336,7 @@ function validate(){ const e=[];
   return e; }
 function render(){ document.getElementById("app").innerHTML=view(); if(!PREVIEW){ const b=document.getElementById("pv-bar"); if(b) b.remove(); } }
 document.addEventListener("input", e=>{ const k=e.target.dataset.in; if(!k) return; S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; });
-document.addEventListener("change", e=>{ if(e.target.name==="opt"){ S.option=e.target.value; render(); } else { const k=e.target.dataset.in; if(k) S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; } });
+document.addEventListener("change", e=>{ if(e.target.name==="opt"){ S.option=e.target.value; render(); } else { const k=e.target.dataset.in; if(k) S[k]= e.target.type==="checkbox"? e.target.checked : e.target.value; if(e.target.dataset.rerender) render(); } });
 document.addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return;
   if(b.dataset.pv){ screen = b.dataset.pv==="none"?null:SAMPLE(b.dataset.pv==="flag"); S.done=false; render(); return; }
   if(b.dataset.k){ S[b.dataset.k]=b.dataset.v; render(); return; }
@@ -349,12 +353,12 @@ function send(){
   const text=tpl.textContent.replace(/[ \t]+/g," ").replace(/\n\s*\n\s*/g,"\n\n").trim();
   const body={kind:"agreement", option:S.option, name:S.name.trim(), sign:S.sign.trim(), email:S.email.trim(), whatsapp:S.whatsapp.trim(),
     side:label(SIDES,S.side), region:label(REGIONS,S.region), kind2:S.kind, ctx:S.ctx, screenDate:screen.date, rf:screen.rf, hh:screen.hh,
-    agree:S.agree===true, version:AGREEMENT_VERSION, text:text};
+    agree:S.agree===true, version:AGREEMENT_VERSION, text:text, heard:S.heard==="Other"?("Other: "+S.heardOther.trim()).slice(0,120):S.heard};
   fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)})
     .then(r=>r.json()).then(j=>{
       S.sending=false;
       if(j && j.ok){ S.result=j; S.done=true;
-        try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:S.option, id:j.id, date:new Date().toLocaleDateString("en-CA")})); }catch(e){}
+        try{ localStorage.setItem("adapt-agreement", JSON.stringify({option:j.option||S.option, id:j.id, date:new Date().toLocaleDateString("en-CA")})); }catch(e){}
         render(); window.scrollTo(0,0); return; }
       const why={name:"Sign by typing your full legal name, first and last.", email:"Check your email address.", screening:"Your screening answers didn't come through. Retake the screening, then come back.", busy:"The form is busy right now. Try again in a few minutes."};
       S.errors=[why[j&&j.error]||"Something went wrong saving your agreement. Try again, or email sam@adaptbeyondpain.com."]; render(); window.scrollTo({top:0,behavior:"smooth"});
