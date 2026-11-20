@@ -264,7 +264,7 @@ let OPTIONS = {};
 function setOptions(){ OPTIONS = {
   starter:{name:"ADAPT Starter", price:325, line:"A 45-minute video call, your plan in the ADAPT app, 2 weeks of messaging support, and a week-2 check-in review."},
   guided:{name:"ADAPT Guided", price:FOUNDING_OPEN?1200:1600, regular:FOUNDING_OPEN?1600:null, line:"12 weeks of coaching: the setup call, check-in reviews every two weeks, two 20-minute check-in calls, and messaging support all 12 weeks."},
-  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients. Within 2 weeks of your call, the $325 counts in full ("+(FOUNDING_OPEN?"$875":"$1,275")+" more). After that, it's the renewal price, since your setup is already done: "+(FOUNDING_OPEN?"$950 while founding spots are open":"$1,200")+". Your price shows after you accept."},
+  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients. Within 2 weeks of your call, the $325 counts in full ("+(FOUNDING_OPEN?"$875":"$1,275")+" more). After that, it's the renewal price, since your setup is already done: "+(FOUNDING_OPEN?"$950 while founding spots are open":"$1,200")+". Your price shows after you accept.", priceText:FOUNDING_OPEN?"$875 or $950":"$1,275 or $1,200"},
   renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")}
 }; }
 setOptions();
@@ -283,7 +283,7 @@ const flagged = s => !!s && (/y/.test(s.rf)||/y/.test(s.hh));
 const S = {sending:false, result:null, option: shown.length===1?shown[0]:(qs.get("o")==="guided"?"guided":""), name:"", email:"", whatsapp:"", side:"", region:"", kind:"", ctx:"", agree:false, sign:"", heard:"", heardOther:"", openText:false, errors:[], done:false};
 
 function optCard(k){ const o=OPTIONS[k];
-  return `<label class="opt"><input type="radio" name="opt" value="${k}" ${S.option===k?"checked":""}><span class="stack" style="gap:4px"><b>${esc(o.name)}</b><span class="pr">${money(o.price)}${o.regular?`<s>${money(o.regular)}</s>`:""}</span>${o.regular?`<span class="hint">Founding rate for the first 5 ADAPT Guided clients. Regular price: ${money(o.regular)}.</span>`:""}<span class="hint">${esc(o.line)}</span></span></label>`; }
+  return `<label class="opt"><input type="radio" name="opt" value="${k}" ${S.option===k?"checked":""}><span class="stack" style="gap:4px"><b>${esc(o.name)}</b><span class="pr">${o.priceText||money(o.price)}${o.regular?`<s>${money(o.regular)}</s>`:""}</span>${o.regular?`<span class="hint">Founding rate for the first 5 ADAPT Guided clients. Regular price: ${money(o.regular)}.</span>`:""}<span class="hint">${esc(o.line)}</span></span></label>`; }
 const seg = (key, list, label) => `<div class="seg" role="group" aria-label="${esc(label)}">${list.map(([v,l])=>`<button type="button" data-k="${key}" data-v="${v}" aria-pressed="${S[key]===v}">${esc(l)}</button>`).join("")}</div>`;
 
 function view(){
