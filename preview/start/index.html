@@ -219,7 +219,7 @@ input[type=text],input[type=email],input[type=tel],select{font:inherit;font-size
 </table>
 <ul>
 <li>Each is paid in full before it starts.</li>
-<li>If you move from ADAPT Starter to ADAPT Guided within 2 weeks of your call, the $325 counts toward it (you pay $1,275 more, or $875 at the founding rate). After those 2 weeks, moving to ADAPT Guided costs the renewal price, $1,200 ($950 while founding spots are open), since your setup is already done.</li>
+<li>If you move from ADAPT Starter to ADAPT Guided within 2 weeks of your call, the $325 counts toward it (you pay $1,275 more, or $875 at the founding rate). After those 2 weeks, moving to ADAPT Guided costs $950 while founding spots are open, since your setup is already done, and $1,275 after that.</li>
 <li><span class="chg">You pay through PayPal, with a card or a PayPal account. Once you accept this agreement, you go to the payment page. Sam confirms your payment and sends you a link to book your first call within 24 hours.</span></li>
 </ul>
 <h3>5. Timing, calls, and messages</h3>
@@ -259,12 +259,12 @@ const PREVIEW = true;
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwW4eqgjC-xO8oE_cFK9gTZre96kB6aFVO2ZYZUAq0l4uuW3PGfEaGkNCP70vSxvgTSKw/exec";   // the "ADAPT client path" script, deployed November 18, 2026 (version 1)
 let FOUNDING_OPEN = true;   // live: read from the client sheet (founding spots left), below
 const ROOT = "../../";
-const AGREEMENT_VERSION = "Draft of November 18, 2026 (2)";
+const AGREEMENT_VERSION = "Draft of November 19, 2026";
 let OPTIONS = {};
 function setOptions(){ OPTIONS = {
   starter:{name:"ADAPT Starter", price:325, line:"A 45-minute video call, your plan in the ADAPT app, 2 weeks of messaging support, and a week-2 check-in review."},
   guided:{name:"ADAPT Guided", price:FOUNDING_OPEN?1200:1600, regular:FOUNDING_OPEN?1600:null, line:"12 weeks of coaching: the setup call, check-in reviews every two weeks, two 20-minute check-in calls, and messaging support all 12 weeks."},
-  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients. Within 2 weeks of your call, the $325 counts in full ("+(FOUNDING_OPEN?"$875":"$1,275")+" more). After that, it's the renewal price, since your setup is already done: "+(FOUNDING_OPEN?"$950 while founding spots are open":"$1,200")+". Your price shows after you accept.", priceText:FOUNDING_OPEN?"$875 or $950":"$1,275 or $1,200"},
+  upgrade:{name:"ADAPT Starter to Guided upgrade", price:FOUNDING_OPEN?875:1275, line:"For ADAPT Starter clients. Within 2 weeks of your call, the $325 counts in full ("+(FOUNDING_OPEN?"$875":"$1,275")+" more). "+(FOUNDING_OPEN?"After that, it's $950 while founding spots are open, since your setup is already done. Your price shows after you accept.":"The price is the same after that."), priceText:FOUNDING_OPEN?"$875 or $950":null},
   renewal:{name:"ADAPT Guided renewal", price:FOUNDING_OPEN?950:1200, line:"12 more weeks of ADAPT Guided, no setup call."+(FOUNDING_OPEN?" Founding rate for renewals taken back to back.":"")}
 }; }
 setOptions();
